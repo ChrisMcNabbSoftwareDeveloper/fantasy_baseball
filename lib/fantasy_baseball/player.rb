@@ -1,9 +1,10 @@
 module FantasyBaseball
   class Player
-    attr_accessor :player_id
+    attr_accessor :id
 
-    def initialize
-
+    def initialize(id)
+      @id = id
     end
+
   end
 end
