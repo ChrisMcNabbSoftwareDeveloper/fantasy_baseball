@@ -15,7 +15,7 @@
 >
 > ### To run, execute this:
 >
-     $ /bin/fantasy_baseball
+     $ ./bin/fantasy_baseball
 >
 > Here is a list of stuff
 >
