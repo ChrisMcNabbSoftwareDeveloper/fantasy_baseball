@@ -1,5 +1,6 @@
 require 'csv'
 require_relative 'player'
+require_relative 'data_loader'
 
 module FantasyBaseball
 
@@ -26,6 +27,11 @@ module FantasyBaseball
       data.stolen_bases = row['SB'].to_i
       data.caught_stealing = row['CS'].to_i
       data
+    end
+
+    def self.load(file_name)
+      @batters = DataLoader.new(file_name)
+      @batters.load_batter_data
     end
 
   end
