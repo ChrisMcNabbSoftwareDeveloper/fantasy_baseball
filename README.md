@@ -6,7 +6,7 @@
 # OVERALL DESCRIPTION
 >
 > ## Fantasy Baseball Statistics - "Play Ball!"
->
+> ### The data is in csv files located in the /data/ directory of the project.
 >
  
 # USAGE
@@ -17,13 +17,13 @@
 >
      $ ./bin/fantasy_baseball
 >
-> Here is a list of stuff
+> The program runs and performs the following:
 >
-> 1.   First item
+> 1.   Reads in the data from csv files
 >
-> 2.   Second item
+> 2.   Computes statistics based on the requirements
 >
-> 3.   Third item
+> 3.   Outputs the aggregated statistics to the screen (STDOUT)
 >
 >
 
