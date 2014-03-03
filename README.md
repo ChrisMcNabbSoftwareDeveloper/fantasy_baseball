@@ -5,21 +5,17 @@
  
 # OVERALL DESCRIPTION
 >
-> ## Overall description goes here
+> ## Fantasy Baseball Statistics - "Play Ball!"
 >
 >
  
 # USAGE
 >
-> ## Main usage notes go here
+> ## This is a Ruby CLI program for computing baseball statistics.
 >
-> ### Secondary header notes go here
+> ### To run, execute this:
 >
-     $ run me at bash prompt
->
-> For example, 
->
-     $ run me at bash prompt
+     $ /bin/fantasy_baseball
 >
 > Here is a list of stuff
 >
@@ -30,7 +26,4 @@
 > 3.   Third item
 >
 >
-# EXAMPLES
-> example #1
->
- 
+
