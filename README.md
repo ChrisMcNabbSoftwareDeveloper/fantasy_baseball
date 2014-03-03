@@ -15,8 +15,18 @@
 >
 > ### To run, execute this:
 >
-     $ ./bin/fantasy_baseball
+     $ ./bin/play_ball
 >
+
+# Installation
+>
+> ### clone repo
+>
+> ### change execute permissions on play_ball file
+>
+     $ chmod +x bin/play_ball
+>
+
 > The program runs and performs the following:
 >
 > 1.   Reads in the data from csv files
