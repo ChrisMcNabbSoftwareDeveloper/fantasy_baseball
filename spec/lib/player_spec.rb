@@ -17,12 +17,6 @@ module FantasyBaseball
         expect(player).to be_kind_of(Player)
       end
 
-      it "should update batting data" do
-        player = Player.new(player_id: 'aardsda01')
-        player.update_batting_data data
-        expect(player.player_id).to eq('aardsda01')
-      end
-      
     end
 
   end

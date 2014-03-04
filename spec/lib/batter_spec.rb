@@ -34,8 +34,7 @@ module FantasyBaseball
       #remaining tests truncated for brevity for sake of time
     end
 
-
-    describe "#load_from_csv" do
+     describe "#load_from_csv" do
       it "initializes data values" do
         puts "data.inspect => #{data.inspect}"
         expect(data.player_id).to eq(row['playerID'])
@@ -51,6 +50,12 @@ module FantasyBaseball
         expect(data.caught_stealing).to eq(row['CS'])
       end
     end
+
+     describe  "#update_batting_data" do
+       it "should update batting data" do
+
+       end
+     end
 
 
     pending it "loads batters from the input data file" do
