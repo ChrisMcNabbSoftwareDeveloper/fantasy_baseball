@@ -52,8 +52,17 @@ module FantasyBaseball
     end
 
      describe  "#update_batting_data" do
-       it "should update batting data" do
+       before(:each) do
+        @batter = Batter.new(player_id: 'aardsda01')
+       end
 
+# @batter AFTER => #<FantasyBaseball::Batter:0x007f971405f048 @year_id=nil, @team_id=nil, @at_bats=nil, @hits=nil, @doubles=nil, @triples=nil, @home_runs=nil, @runs_batted_in=nil, @stolen_bases=nil, @caught_stealing=nil, @player_id="aardsda01", @batting_data={"2011"=>#<FantasyBaseball::Batter:0x007f9714828680 @year_id=2011, @team_id="LAA", @at_bats=502, @hits=127, @doubles=30, @triples=1, @home_runs=8, @runs_batted_in=60, @stolen_bases=21, @caught_stealing=5, @player_id="aardsda01", @batting_data={}, @player=#<FantasyBaseball::Batter:0x007f971405f048 ...>>}>
+# @team_id="LAA", @at_bats=502
+       it "should update batting data" do
+#puts "@batter BEFORE => #{@batter.inspect}"
+        @batter.update_batting_data data
+#        expect(@batting_data{"team_id"}).to eq("LAA")
+#puts "@batter AFTER => #{@batter.inspect}"
        end
      end
 

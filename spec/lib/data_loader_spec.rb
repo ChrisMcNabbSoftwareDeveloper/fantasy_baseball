@@ -15,9 +15,7 @@ module FantasyBaseball
        data_loader.load_batter_data
       end
 
-
     end
   end
-
 
 end

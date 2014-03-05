@@ -4,7 +4,7 @@ require_relative 'player'
 module FantasyBaseball
 
   class Batter < Player
-    attr_accessor :year_id, :team_id, :at_bats, :hits, :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases, :caught_stealing, :player
+    attr_accessor :year_id, :team_id, :at_bats, :hits, :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases, :caught_stealing, :player, :batting_data
 
     def initialize(args)
       @year_id = args[:year_id]
@@ -18,10 +18,11 @@ module FantasyBaseball
       @stolen_bases = args[:stolen_bases]
       @caught_stealing = args[:caught_stealing]
       super(args)
+      @batting_data = {}
     end
 
     def self.load_from_csv(row)
-      puts "row => #{row.inspect}"
+puts "row => #{row.inspect}"
       data = Batter.new(player_id: row['playerID'])
       data.player_id = row['playerID']
       data.year_id = row['yearID']
@@ -38,10 +39,15 @@ module FantasyBaseball
     end
 
     def update_batting_data(data)
-
+puts "*" * 120
       puts '-' * 120
       puts "data => #{data.inspect}"
       puts '-' * 120
+
+      puts '-' * 120
+      puts "@batting_data => #{@batting_data.inspect}"
+      puts '-' * 120
+puts "*" * 120
 
       data.player = self
 
@@ -55,9 +61,13 @@ module FantasyBaseball
       puts "year => #{year.inspect}" if data.year_id
       puts '-' * 120
 
+puts "@batting_data[year] => #{@batting_data[year].inspect}"
+
       if @batting_data[year]
-        @batting_data[year].add_data data
+puts "inside if"
+        @batting_data[year].add_new_data data
       else
+puts "inside else"
         @batting_data[year] = data
       end
 
@@ -67,8 +77,7 @@ module FantasyBaseball
 
     end
 
-    def add_data(data)
-
+    def add_new_data(data)
       @at_bats += data.at_bats
       @hits += data.hits
       @doubles += data.doubles
