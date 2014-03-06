@@ -17,6 +17,7 @@ module FantasyBaseball
 
       delta = base_row_batting_average <=> compare_row_batting_average
 
+# i know this is not very intuitive....i'll circle back around and refactor
       case delta
       when 0
         0 #same - no change - no improvement
