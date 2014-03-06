@@ -11,9 +11,7 @@ module FantasyBaseball
       end
     end
 
-
     describe "#annual_batting_average" do
-
       let(:player_id) {'aardsda01'}
       let(:data_row) { {'playerID' => player_id, 'yearID' => 2009,
                         'teamID' => 'NYA', 'G' => 152, 'AB' => 563, 'R' => 96,
@@ -27,9 +25,7 @@ module FantasyBaseball
       end
     end
 
-
     describe "#batting_average_improvement" do
-
       let(:player_id) {'abreubo01'}
       let(:base_row) { {'playerID' => player_id, 'yearID' => 2009,
                         'teamID' => 'LAA', 'G' => 152, 'AB' => 563, 'R' => 96,
@@ -45,7 +41,6 @@ module FantasyBaseball
         batting_average_improvement = batting_statistics.batting_average_improvement(base_row, compare_row)
         expect(batting_average_improvement).to eq(0)
       end
-
     end
 
     describe "#batting_average_improvement" do
