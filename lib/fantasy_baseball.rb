@@ -42,9 +42,9 @@ module FantasyBaseball
   end
 
   def self.most_improved_batting_average(*args)
-#    raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
+    raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
 
-# => most_improved_player = calculate_most_improved_batting_average(*args)
+#    most_improved_player = calculate_most_improved_batting_average(*args)
 
     puts "*" * 80
     puts "Most Improved Batting Average"
