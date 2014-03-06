@@ -4,8 +4,8 @@ module FantasyBaseball
 
   class DataLoader
 
-    def initialize(file_name)
-      @file_path = File.expand_path(file_name, File.dirname(__FILE__))
+    def initialize(file_path)
+      @file_path = file_path
     end
 
     # data_row => #<CSV::Row "playerID":"perkigl01" "yearID":"2007" "teamID":"MIN" "G":"19" "AB":nil "R":nil "H":nil "2B":nil "3B":nil "HR":nil "RBI":nil "SB":nil "CS":nil>
@@ -15,16 +15,17 @@ module FantasyBaseball
       batters = {}
       CSV.foreach(@file_path, headers: true) do |data_row|
         data = Batter.load_from_csv data_row
+        # check validity
         update_batter_data(batters, data)
       end
     end
 
     private
 
-    def update_player_data(players, data)
-      players[data.player_id] = Player.new(player_id: data.player_id) unless players[data.player_id]
-      player = players[data.player_id]
-      player.update_batting_data(data)
+    def update_batter_data(batters, data)
+      batters[data.player_id] = Batter.new(player_id: data.player_id) unless batters[data.player_id]
+      batter = batters[data.player_id]
+      batter.update_batting_data(data)
     end
 
   end

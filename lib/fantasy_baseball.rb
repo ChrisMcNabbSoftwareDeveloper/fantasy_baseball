@@ -20,8 +20,8 @@ module FantasyBaseball
   end
 
   def self.load_batters
-#    batters = DataLoader.new(@batting_file_path)
-#    batters.load_batter_data
+    batters = DataLoader.new(@batting_file_path)
+    batters.load_batter_data
   end
 
   # future expansion - not implemented, yet
