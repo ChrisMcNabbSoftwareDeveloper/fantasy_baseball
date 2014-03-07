@@ -22,22 +22,22 @@ module FantasyBaseball
       true
     end
 
+    private
+
     def clean_input_file(file_path)
       # this code here is a little "hokey"...but it works for the moment....will refactor
-      pre_processed_file_path = File.expand_path('Batting-pre-processed.csv')
+      pre_processed_file_path = File.expand_path('data/Batting-pre-processed.csv')
       command = "tr '\\n' '\\r' < #{file_path} > #{pre_processed_file_path}"
       system(command)
       pre_processed_file_path
     end
 
-    private
     def update_batter_data(batters, data)
       batters[data.player_id] = Batter.new(player_id: data.player_id) unless batters[data.player_id]
       batter = batters[data.player_id]
       batter.update_batting_data(data)
     end
 
-    private
     def data_clean?(data)
       valid_string?(data.player_id) &&
       valid_string?(data.year_id) &&
@@ -56,12 +56,10 @@ module FantasyBaseball
 
     end
 
-    private
     def valid_string?(string)
       !(string.nil? || string.empty?)
     end
 
-    private
     def valid_integer?(value)
       value.is_a? Integer
     end
