@@ -34,8 +34,8 @@ module FantasyBaseball
       #remaining tests truncated for brevity for sake of time
     end
 
-     describe "#load_from_csv" do
-      it "initializes data values" do
+    describe "#initialize_key_names" do
+      it "initializes key names" do
         expect(data.player_id).to eq(row['playerID'])
         expect(data.year_id).to eq(row['yearID'])
         expect(data.league).to eq(row['league'])
@@ -53,21 +53,27 @@ module FantasyBaseball
       end
     end
 
-     describe  "#update_batting_data" do
-       before(:each) do
+    describe  "#update_batting_data" do
+      let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => 142,
+                   'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60,
+                   'SB' => 21, 'CS' => 5 } }
+      let(:data) { Batter.load_from_csv row }
+
+      before(:each) do
         @batter = Batter.new(player_id: 'aardsda01')
-       end
+      end
 
-# @batter AFTER => #<FantasyBaseball::Batter:0x007f971405f048 @year_id=nil, @team_id=nil, @at_bats=nil, @hits=nil, @doubles=nil, @triples=nil, @home_runs=nil, @runs_batted_in=nil, @stolen_bases=nil, @caught_stealing=nil, @player_id="aardsda01", @batting_data={"2011"=>#<FantasyBaseball::Batter:0x007f9714828680 @year_id=2011, @team_id="LAA", @at_bats=502, @hits=127, @doubles=30, @triples=1, @home_runs=8, @runs_batted_in=60, @stolen_bases=21, @caught_stealing=5, @player_id="aardsda01", @batting_data={}, @player=#<FantasyBaseball::Batter:0x007f971405f048 ...>>}>
-# @team_id="LAA", @at_bats=502
-       it "should update batting data" do
-puts "@batter BEFORE => #{@batter.inspect}"
+      it "should update batting data" do
+
+        puts "@batter BEFORE => #{@batter.inspect}"
+
         @batter.update_batting_data data
-#        expect(@batter{"runs"}).to eq(350)
-puts "@batter AFTER => #{@batter.inspect}"
-       end
-     end
+        #        expect(@batter.runs).to eq(350)
 
+        #puts "@batter AFTER => #{@batter.inspect}"
+
+      end
+    end
 
   end
 
