@@ -25,6 +25,10 @@
      $ ./bin/play_ball
 >
 
+>
+     $ git clone git@github.com:chrismcnabbsoftwaredeveloper/fantasy_baseball.git
+>
+
 # Installation
 >
 > NOTE: In order to simplify the installation burden, these steps would normally be wrapped up in a rake task.  This was not done due to time constraints. Here are the manual instructions.
