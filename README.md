@@ -81,6 +81,12 @@
      $ /var/log/fantasy_baseball.log
 >
 
+> Logging example:
+>
+     Mar  8 03:54:09 L1037-2.local FantasyBaseball[65948]: File Import Failed => file_path = /Users/christopher.mcnabb/Developer/git/fantasy_baseball/data/Batting-pre-processed.csv Exception Message: #<TypeError: can't convert Symbol into Integer>
+>
+
+
 # CUSTOMER SPECIFICATIONS
 >
 > Specification 1: Display data for "Most Improved Batting Average from 2009 to 2010."
