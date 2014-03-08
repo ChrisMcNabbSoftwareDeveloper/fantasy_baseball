@@ -34,26 +34,26 @@
      $ git clone git@github.com:chrismcnabbsoftwaredeveloper/fantasy_baseball.git
 >
 
-> 2.   Setup logging* - add this entry to /etc/syslog.conf
+> Step 2: Setup logging* - add this entry to /etc/syslog.conf
 >
      local5.* /var/log/fantasy_baseball.log
 >
 
 > *Note: these steps are for Mac OSX. These steps will most certainly be different depending on your production environment.
 >
-> 3.   Stop/Start syslogd daemon
+> Step 3: Stop/Start syslogd daemon
 >
      $ sudo launchctl unload /System/Library/LaunchDaemons/com.apple.syslogd.plist
 >
      $ sudo launchctl load /System/Library/LaunchDaemons/com.apple.syslogd.plist
 >
 
-> 4.   Change execute permissions on play_ball file
+> Step 4: Change execute permissions on play_ball file
 >
      $ chmod +x bin/play_ball
 >
 
-> 5. Setup/Verify input data files - configuration.rb
+> Step 5: Setup/Verify input data files - configuration.rb
 >
 > By default, the csv input data files are located in the /data/ directory of the project.  However, this is configurable.  You will configure the file location in the following configuration file:
 >
@@ -67,7 +67,7 @@
        }
 >
 
-> 6. Now to run the program,
+> Step 6: Now to run the program,
 >
      $ ./bin/play_ball
 >
