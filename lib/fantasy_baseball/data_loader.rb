@@ -9,7 +9,7 @@ module FantasyBaseball
     def initialize(file_path)
       @file_path = clean_input_file(file_path)
       csv_config = Configuration.for 'csv_options'
-      @csv_options = build_options_hash(csv_config.options)
+      @csv_options = build_options_hash(csv_config)
     end
 
     def load_batter_data
@@ -17,10 +17,6 @@ module FantasyBaseball
       @batters_by_id = {}
 
       begin
-puts '-' * 120
-puts "@csv_options => #{@csv_options.inspect}"
-puts '-' * 120
-
         CSV.foreach(@file_path, @csv_options) do |row|
           batter_data = Batter.initialize_key_names row
           next unless data_clean?(batter_data)
@@ -41,10 +37,21 @@ puts '-' * 120
     #    private
 
     def build_options_hash(options)
-      puts options.inspect
-      hash = {}
-      hash[options]
-      hash
+       hash = {}
+       hash[:headers] = options.headers
+       hash[:col_sep] = options.col_sep
+       hash[:row_sep] = options.row_sep
+       hash[:quote_char] = options.quote_char
+       hash[:field_size_limit] = options.field_size_limit
+       hash[:converters] = options.converters
+       hash[:unconverted_fields] = options.unconverted_fields
+       hash[:headers] = options.headers
+       hash[:return_headers] = options.return_headers
+       hash[:write_headers] = options.write_headers
+       hash[:skip_blanks] = options.skip_blanks
+       hash[:force_quotes] = options.force_quotes
+       hash[:encoding] = options.encoding
+       hash
     end
 
     def find_or_create_batter(player_id)
@@ -99,7 +106,6 @@ puts '-' * 120
     end
 
     def clean_input_file(file_path)
-      # this code here is a little "hokey"...but it works for the moment....will refactor
       pre_processed_file_path = File.expand_path('data/Batting-pre-processed.csv')
       command = "tr '\\n' '\\r' < #{file_path} > #{pre_processed_file_path}"
       system(command)

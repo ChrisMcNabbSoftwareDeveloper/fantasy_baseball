@@ -8,15 +8,15 @@ Configuration.for('pitching_input_file') {
   file_name 'data/Pitching-07-12.csv'
 }
 
-Configuration.for('csv_options') {
-  options 'headers: true'
+Configuration.for('csv_options_2') {
+  headers true
+  col_sep ','
 }
 
-Configuration.for('csv_options_2') {
-options {
+Configuration.for('csv_options') {
   col_sep ','
   row_sep 'auto'
-  quote_char ""
+  quote_char '"'
   field_size_limit nil
   converters nil
   unconverted_fields nil
@@ -26,6 +26,5 @@ options {
   skip_blanks false
   force_quotes false
   encoding 'UTF-8'
-  }
 }
 
