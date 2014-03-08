@@ -143,27 +143,27 @@
      Most Improved Batting Average
      -----------------------------
      - (players must have at least 200 at-bats.)
-     
-        Hank Aaron (aaronha01)
-     
+
+       Hank Aaron (aaronha01)
+
      ********************************************************************************
      Oakland A's Slugging Percentage in 2007
      ---------------------------------------
-     
+
         42%
-     
+
      ********************************************************************************
      Triple Crown Winner for AL and NL in 2011 and 2012
      --------------------------------------------------
-     
+
      2011:
      AL:   Johnny Abrego (abregojo01)
      NL:   Johnny Abrego (abregojo01)
-     
+
      2012:
      AL:   Johnny Abrego (abregojo01)
      NL:   Johnny Abrego (abregojo01)
-     
+
      ********************************************************************************
 >
 
