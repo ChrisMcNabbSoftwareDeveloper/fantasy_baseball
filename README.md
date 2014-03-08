@@ -29,8 +29,7 @@
 >
 > NOTE: In order to simplify the installation burden, these steps would normally be wrapped up in a rake task.  This was not done due to time constraints. Here are the manual instructions.
 >
-> 1.   Clone repo
->
+> 1. Clone repo
 >
      $ git clone git@github.com:chrismcnabbsoftwaredeveloper/fantasy_baseball.git
 >
