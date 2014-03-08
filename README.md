@@ -11,11 +11,11 @@
 >
 > The program runs and performs the following:
 >
-> 1.   Reads in the data from csv files
+> 1.   Reads data into the program from input CSV files
 >
-> 2.   Computes statistics based on the requirements
+> 2.   Computes statistics based on the Customer Specifications (see below)
 >
-> 3.   Outputs the aggregated statistics to the screen (STDOUT)
+> 3.   Outputs the aggregated statistics to the screen (STDOUT) for user to view
 >
 >
 # USAGE
@@ -25,7 +25,7 @@
      $ ./bin/play_ball
 >
 
-# Installation
+# INSTALLATION
 >
 > NOTE: In order to simplify the installation burden, these steps would normally be wrapped up in a rake task.  This was not done due to time constraints. Here are the manual instructions.
 >
@@ -75,9 +75,23 @@
 
 # LOGGING
 >
+> ## SYSLOG
 > Standard logging to syslog, for production log aggregation, is included in this code base.  By default here, we are writing to the following log file on Mac OS X.  You will note in the installation instructions above, the setup and configuration for this syslog log file.  In a normal production environment, this logging configuration will be similar, but different based on the version of Linux used.
 >
      $ /var/log/fantasy_baseball.log
+>
+
+# CUSTOMER SPECIFICATIONS
+>
+> Specification 1: Display data for "Most Improved Batting Average from 2009 to 2010."
+>
+> Specification 2: Display data for "Slugging Percentage for All Oakland A's Players in 2007."
+>
+> Specification 3: Display data for "The Triple Crown Winner for 2001 and 2012 for both the AL and the NL"
+>
+> Details regarding these customer specifications can be found in the spec doc located in the /doc/ folder of the project.
+>
+     $ ../doc/FantasyBaseballRequirements.doc
 >
 
 
