@@ -15,13 +15,13 @@ module FantasyBaseball
     welcome
     batters = load_batters
     most_improved_batting_average(batters, "2009", "2010")
-    oakland_slugging_percentage(batters, "2007")
-    triple_crown_winner(batters, "2011", "2012")
+#    oakland_slugging_percentage(batters, "2007")
+#    triple_crown_winner(batters, "2011", "2012")
   end
 
   def self.load_batters
     batters = DataLoader.new(@batting_file_path)
-#    batters.load_batter_data
+    batters.load_batter_data
   end
 
   # future expansion - not implemented, yet

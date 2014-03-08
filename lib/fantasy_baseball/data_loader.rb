@@ -1,5 +1,6 @@
 require 'csv'
 require 'syslog'
+require 'configuration'
 
 module FantasyBaseball
 
@@ -7,6 +8,8 @@ module FantasyBaseball
 
     def initialize(file_path)
       @file_path = clean_input_file(file_path)
+      csv_config = Configuration.for 'csv_options'
+      @csv_options = build_options_hash(csv_config.options)
     end
 
     def load_batter_data
@@ -14,7 +17,11 @@ module FantasyBaseball
       @batters_by_id = {}
 
       begin
-        CSV.foreach(@file_path, headers: true) do |row|
+puts '-' * 120
+puts "@csv_options => #{@csv_options.inspect}"
+puts '-' * 120
+
+        CSV.foreach(@file_path, @csv_options) do |row|
           batter_data = Batter.initialize_key_names row
           next unless data_clean?(batter_data)
           batter = find_or_create_batter(batter_data.player_id)
@@ -32,6 +39,13 @@ module FantasyBaseball
     end
 
     #    private
+
+    def build_options_hash(options)
+      puts options.inspect
+      hash = {}
+      hash[options]
+      hash
+    end
 
     def find_or_create_batter(player_id)
       if @batters_by_id[player_id]
