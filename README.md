@@ -96,7 +96,6 @@
      Exception Message: #<TypeError: can't convert Symbol into Integer>
 >
 
-
 >
      Mar  8 05:22:26 L1037-2.local FantasyBaseball[69109]: File Import Failed => 
      file_path = /Users/christopher.mcnabb/Developer/git/fantasy_baseball/data/Batting-07-12.csv 
@@ -106,12 +105,24 @@
 
 # CUSTOMER SPECIFICATIONS
 >
-> Specification 1: Display data for "Most Improved Batting Average from 2009 to 2010."
+> Specification 1:
+> Display data for:
 >
-> Specification 2: Display data for "Slugging Percentage for All Oakland A's Players in 2007."
+     "Most Improved Batting Average from 2009 to 2010"
 >
-> Specification 3: Display data for "The Triple Crown Winner for 2001 and 2012 for both the AL and the NL"
+
+> Specification 2:
+> Display data for:
 >
+     "Slugging Percentage for All Oakland A's Players in 2007"
+>
+
+> Specification 3:
+> Display data for:
+>
+     "The Triple Crown Winner for 2001 and 2012 for both the AL and the NL"
+>
+
 > Details regarding these customer specifications can be found in the spec doc located in the /doc/ folder of the project.
 >
      $ ../doc/FantasyBaseballRequirements.doc
