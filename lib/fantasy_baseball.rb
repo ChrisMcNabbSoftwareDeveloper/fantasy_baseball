@@ -15,13 +15,13 @@ module FantasyBaseball
     welcome
     batters = load_batters
     most_improved_batting_average(batters, "2009", "2010")
-#    oakland_slugging_percentage(batters, "2007")
-#    triple_crown_winner(batters, "2011", "2012")
+    oakland_slugging_percentage(batters, "2007")
+    triple_crown_winner(batters, "2011", "2012")
   end
 
   def self.load_batters
     batters = DataLoader.new(@batting_file_path)
-    batters.load_batter_data
+#    batters.load_batter_data
   end
 
   # future expansion - not implemented, yet
@@ -49,11 +49,9 @@ module FantasyBaseball
     puts "*" * 80
     puts "Most Improved Batting Average"
     puts "-----------------------------"
-    puts "- (players must have at least 200 at-bats.)"
-    puts
+    puts "(players must have at least 200 at-bats.)"
 #    puts "   #{most_improved_player.first_name} #{most_improved_player.last_name} (#{most_improved_player.player_id})"
     puts "   Hank Aaron (aaronha01)" # <= example - delete
-    puts
   end
 
   def self.oakland_slugging_percentage(*args)
@@ -65,9 +63,7 @@ module FantasyBaseball
     puts "*" * 80
     puts "Oakland A's Slugging Percentage in 2007"
     puts "---------------------------------------"
-    puts
     puts "   42% "
-    puts
   end
 
   def self.triple_crown_winner(*args)
@@ -80,15 +76,12 @@ module FantasyBaseball
     puts "*" * 80
     puts "Triple Crown Winner for AL and NL in 2011 and 2012"
     puts "--------------------------------------------------"
-    puts
     puts "2011:"
     puts "AL:   Johnny Abrego (abregojo01) "
     puts "NL:   Johnny Abrego (abregojo01) "
-    puts
     puts "2012:"
     puts "AL:   Johnny Abrego (abregojo01) "
     puts "NL:   Johnny Abrego (abregojo01) "
-    puts
     puts "*" * 80
   end
 

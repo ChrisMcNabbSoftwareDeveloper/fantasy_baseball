@@ -6,8 +6,7 @@ module FantasyBaseball
   class DataLoader
 
     def initialize(file_path)
-#      @file_path = clean_input_file(file_path)
-      @file_path = (file_path)
+      @file_path = clean_input_file(file_path)
     end
 
     def load_batter_data

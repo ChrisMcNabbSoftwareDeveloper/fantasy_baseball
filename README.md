@@ -142,7 +142,7 @@
      ***************************************************************************
      Most Improved Batting Average
      -----------------------------
-     - (players must have at least 200 at-bats.)
+     (players must have at least 200 at-bats.)
        Hank Aaron (aaronha01)
      ***************************************************************************
      Oakland A's Slugging Percentage in 2007
