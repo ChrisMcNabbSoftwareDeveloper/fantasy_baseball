@@ -24,9 +24,9 @@ module FantasyBaseball
       @caught_stealing = args[:caught_stealing]
       super(args)
       @batting_data = {}
+      @batter_data_by_year = []
     end
 
-#    def self.load_from_csv(row)
     def self.initialize_key_names(row)
       data = Batter.new(player_id: row['playerID'])
       data.player_id = row['playerID']

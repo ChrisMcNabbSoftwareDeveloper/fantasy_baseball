@@ -81,11 +81,26 @@
      $ /var/log/fantasy_baseball.log
 >
 
-> Logging example:
+> Logging examples:
+>
+> Success:
+>
+     Mar  8 05:11:25 L1037-2.local FantasyBaseball[68754]: Successful File Import => 
+     file_path = /Users/christopher.mcnabb/Developer/git/fantasy_baseball/data/Batting-pre-processed.csv
+>
+
+> Failure:
 >
      Mar  8 03:54:09 L1037-2.local FantasyBaseball[65948]: File Import Failed => 
      file_path = /Users/christopher.mcnabb/Developer/git/fantasy_baseball/data/Batting-pre-processed.csv 
      Exception Message: #<TypeError: can't convert Symbol into Integer>
+>
+
+
+>
+     Mar  8 05:22:26 L1037-2.local FantasyBaseball[69109]: File Import Failed => 
+     file_path = /Users/christopher.mcnabb/Developer/git/fantasy_baseball/data/Batting-07-12.csv 
+     Exception Message: #<CSV::MalformedCSVError: Unquoted fields do not allow \r or \n (line 7911).>
 >
 
 

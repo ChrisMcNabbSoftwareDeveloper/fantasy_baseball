@@ -5,7 +5,6 @@ module FantasyBaseball
 
     def initialize(args={})
       @player_id = args[:player_id]
-      @batting_data = {}
     end
 
   end

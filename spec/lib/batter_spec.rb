@@ -8,7 +8,7 @@ module FantasyBaseball
                  'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60,
                  'SB' => 21, 'CS' => 5 } }
 
-    let(:data) { Batter.load_from_csv row }
+    let(:data) { Batter.initialize_key_names row }
 
     describe "batter class" do
       it "should be a kind of batter" do
@@ -19,6 +19,11 @@ module FantasyBaseball
       it "should have a player id" do
         batter = Batter.new(player_id: 'aardsda01')
         expect(batter.player_id).to eq('aardsda01')
+      end
+
+      it "should have a player id w double quotes" do
+        batter = Batter.new(player_id: "aardsda01")
+        expect(batter.player_id).to eq("aardsda01")
       end
 
       it "should have a year id" do
@@ -57,7 +62,7 @@ module FantasyBaseball
       let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => 142,
                    'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60,
                    'SB' => 21, 'CS' => 5 } }
-      let(:data) { Batter.load_from_csv row }
+      let(:data) { Batter.initialize_key_names row }
 
       before(:each) do
         @batter = Batter.new(player_id: 'aardsda01')
