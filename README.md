@@ -75,11 +75,10 @@
 
 # LOGGING
 >
-> ## This is a Ruby CLI program for computing baseball statistics.
+> Standard logging to syslog, for production log aggregation, is included in this code base.  By default here, we are writing to the following log file on Mac OS X.  You will note in the installation instructions above, the setup and configuration for this syslog log file.  In a normal production environment, this logging configuration will be similar, but different based on the version of Linux used.
 >
-> ### To run, execute this:
+     $ /var/log/fantasy_baseball.log
 >
-     $ ./bin/play_ball
->
+
 
 
