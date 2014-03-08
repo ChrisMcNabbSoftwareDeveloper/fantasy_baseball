@@ -120,7 +120,7 @@
 > Specification 3:
 > Display data for:
 >
-     "The Triple Crown Winner for 2001 and 2012 for both the AL and the NL"
+     "The Triple Crown Winner for 2011 and 2012 for both the AL and the NL"
 >
 
 > Details regarding these customer specifications can be found in the spec doc located in the /doc/ folder of the project.
