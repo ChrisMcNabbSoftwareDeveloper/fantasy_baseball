@@ -14,12 +14,6 @@ module FantasyBaseball
       it "should have the player_id set" do
         expect(@player.player_id).to eq("aardsda01")
       end
-pending      it "should set the player first name" do
-        expect(@player.player_first_name).to eq("bob")
-      end
-pending      it "should set the player last name" do
-        expect(@player.player_last_name).to eq("jones")
-      end
     end
 
   end

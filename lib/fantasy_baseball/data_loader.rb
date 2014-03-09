@@ -1,6 +1,7 @@
 require 'csv'
 require 'syslog'
 require 'configuration'
+require_relative '../../lib/fantasy_baseball/statistics'
 
 module FantasyBaseball
 
@@ -22,7 +23,7 @@ module FantasyBaseball
       begin
         CSV.foreach(@file_path, @csv_options) do |row|
           @line_count += 1
-          roster_data = Player.initialize_key_names row
+          roster_data = Statistics.initialize_roster_data row
           next unless roster_data_clean?(roster_data)
           find_or_create_roster_entry(roster_data)
         end
@@ -44,7 +45,7 @@ module FantasyBaseball
       begin
         CSV.foreach(@file_path, @csv_options) do |row|
           @line_count += 1
-          batter_data = Batter.initialize_key_names row
+          batter_data = Statistics.initialize_batting_data row
           next unless batter_data_clean?(batter_data)
           batter = find_or_create_batter(batter_data)
           batter.batter_data_by_year << transform_data(batter_data)
@@ -65,7 +66,7 @@ module FantasyBaseball
       @batters_by_id = {}
       begin
         CSV.foreach(@file_path, @csv_options) do |row|
-          batter_data = Batter.initialize_key_names row
+          batter_data = Statistics.initialize_batting_data row
           next unless batter_data_clean?(batter_data)
           batter = find_or_create_batter(batter_data.player_id)
           batter.batter_data_by_year << transform_data(batter_data)

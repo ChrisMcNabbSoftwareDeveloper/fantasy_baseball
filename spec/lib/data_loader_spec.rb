@@ -141,7 +141,7 @@ module FantasyBaseball
     # private methods - usind tdd to drive out methods - will delete these tests afterward
     pending    describe "get_data_by_year" do
       let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => '142', 'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60, 'SB' => 21, 'CS' => 5 } }
-      let(:batter_data) { Batter.initialize_key_names row }
+      let(:batter_data) { Statistics.initialize_batting_data row }
 
       it "should return data hash for year" do
         actual_hash = @data_loader.get_data_by_year(batter_data)

@@ -16,23 +16,6 @@ module FantasyBaseball
       data
     end
 
-
-#    def valid_name?(first_name, last_name)
-#      valid_string?(first_name) && valid_string?(last_name)
-#    end
-#
-#    def valid_string?(string)
-#      !(string.nil? || string.empty?)
-#    end
-#
-#    def get_player_full_name(first_name, last_name)
-#      if valid_name?(first_name, last_name)
-#        first_name + " " + last_name
-#      else
-#        ""
-#      end
-#    end
-
   end
 
 end
