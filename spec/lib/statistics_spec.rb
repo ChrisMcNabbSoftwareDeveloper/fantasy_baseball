@@ -4,22 +4,36 @@ module FantasyBaseball
 
   describe Statistics do
 
-    describe "stastics" do 
+    describe "statistics" do
       it "should be a kind of statistics" do
         batting_statistics = Statistics.new
         expect(batting_statistics).to be_a_kind_of(Statistics)
       end
     end
 
-    describe "#initialize_key_names" do
+    describe "#initialize_roster_data" do
+
+    let(:row) { {'playerID' => 'aaronha01', 'birthYear' => 2011, 'nameFirst' => 'Hank', 'nameLast' => 'Aaron' } }
+
+    let(:data) { Statistics.initialize_roster_data row }
+
+      it "initializes roster data" do
+        expect(data.player_id).to eq(row['playerID'])
+        expect(data.player_birth_year).to eq(row['birthYear'])
+        expect(data.player_first_name).to eq(row['nameFirst'])
+        expect(data.player_last_name).to eq(row['nameLast'])
+      end
+    end
+
+    describe "#initialize_batting_data" do
 
     let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => 142,
                  'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60,
                  'SB' => 21, 'CS' => 5 } }
 
-    let(:data) { Statistics.initialize_key_names row }
+    let(:data) { Statistics.initialize_batting_data row }
 
-      it "initializes key names" do
+      it "initializes batting data" do
         expect(data.player_id).to eq(row['playerID'])
         expect(data.year_id).to eq(row['yearID'])
         expect(data.league).to eq(row['league'])

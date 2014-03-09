@@ -6,7 +6,7 @@ module FantasyBaseball
 
     describe "new roster entry" do
       let(:row) { { 'playerID' => 'aaronha01', 'birthYear' => '1934', 'nameFirst' => 'Hank', 'nameLast' => 'Aaron' } }
-      let(:data) { Player.initialize_key_names row}
+      let(:data) { Statistics.initialize_roster_data row}
       before(:each) do
         @roster_entry = RosterEntry.new(data)
       end
@@ -29,10 +29,7 @@ module FantasyBaseball
       it "should set the player_full_name" do
         expect(@roster_entry.player_full_name).to eq('Hank Aaron')
       end
-
     end
-
-
 
   end
 end

@@ -3,13 +3,22 @@ module FantasyBaseball
   class Statistics
     attr_accessor :player_id, :year_id, :league, :team_id, :games, :at_bats, :runs, :hits,
       :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases,
-      :caught_stealing 
+      :caught_stealing, :player_birth_year, :player_first_name, :player_last_name
     #, :player, :batting_data, :batter_data_by_year
 
     def initialize
     end
 
-    def self.initialize_key_names(row)
+    def self.initialize_roster_data(row)
+      data = Statistics.new
+      data.player_id = row['playerID']
+      data.player_birth_year = row['birthYear']
+      data.player_first_name = row['nameFirst']
+      data.player_last_name = row['nameLast']
+      data
+    end
+
+    def self.initialize_batting_data(row)
       data = Statistics.new
       data.player_id = row['playerID']
       data.year_id = row['yearID']
