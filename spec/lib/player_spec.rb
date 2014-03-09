@@ -4,15 +4,24 @@ module FantasyBaseball
 
   describe Player do
 
-    let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'teamID' => 'LAA', 'G' => '142',
-                 'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60,
-                 'SB' => 21, 'CS' => 5 } }
-    let(:data) { Batter.initialize_key_names row }
-
-    describe "player" do
+    describe "when we create a new player" do
+      before(:each) do
+        @player = Player.new(player_id: "aardsda01")
+      end
       it "should be a kind of player" do
-        player = Player.new(player_id: "aardsda01")
-        expect(player).to be_kind_of(Player)
+        expect(@player).to be_kind_of(Player)
+      end
+      it "should have the player_id set" do
+        expect(@player.player_id).to eq("aardsda01")
+      end
+      it "should set the player first name" do
+        expect(@player.player_first_name).to eq("bob")
+      end
+      it "should set the player last name" do
+        expect(@player.player_last_name).to eq("joens")
+      end
+      it "should set the player full name" do
+        expect(@player.player_full_name).to eq("bob jones")
       end
     end
 

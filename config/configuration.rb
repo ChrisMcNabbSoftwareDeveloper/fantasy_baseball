@@ -1,21 +1,20 @@
 require 'configuration'
 
+Configuration.for('player_roster') {
+  input_file_name 'data/Master-small.csv'
+}
+
 Configuration.for('batting_input_file') {
-  file_name 'data/Batting-07-12.csv'
+  input_file_name 'data/Batting-07-12.csv'
 }
 
 Configuration.for('pitching_input_file') {
-  file_name 'data/Pitching-07-12.csv'
-}
-
-Configuration.for('csv_options_2') {
-  headers true
-  col_sep ','
+  input_file_name 'data/Pitching-07-12.csv'
 }
 
 Configuration.for('csv_options') {
   col_sep ','
-  row_sep 'auto'
+  row_sep :auto
   quote_char '"'
   field_size_limit nil
   converters nil

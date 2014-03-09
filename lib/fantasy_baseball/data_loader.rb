@@ -6,20 +6,47 @@ module FantasyBaseball
 
   class DataLoader
 
-    def initialize(file_path)
-      @file_path = clean_input_file(file_path)
-      csv_config = Configuration.for 'csv_options'
-      @csv_options = build_options_hash(csv_config)
+    BATTING_PRE_PROCESSED_FILE_PATH = File.expand_path('data/Batting-pre-processed.csv')
+    PLAYER_ROSTER_PRE_PROCESSED_FILE_PATH = File.expand_path('data/Master-pre-processed.csv')
+
+    def initialize
+    end
+
+    def load_player_roster(file_path)
+      return ArgumentError if file_path.empty?
+      @file_path = clean_input_file(file_path, PLAYER_ROSTER_PRE_PROCESSED_FILE_PATH)
+      @csv_options = build_options_hash(Configuration.for 'csv_options')
+      @roster = []
+      @players_by_id = {}
+      @line_count = 0
+      begin
+        CSV.foreach(@file_path, @csv_options) do |row|
+          @line_count += 1
+          roster_data = Player.initialize_key_names row
+          next unless roster_data_clean?(roster_data)
+          find_or_create_roster_entry(roster_data)
+        end
+        log_successful_import(@file_path, @line_count)
+      rescue CSV::MalformedCSVError => error
+        log_failed_import(@file_path, error)
+        raise
+      end
+      @roster
+    end
+
+    def load_batting_data(file_path, roster)
+      return ArgumentError if file_path.empty?
+      @file_path = clean_input_file(file_path, BATTING_PRE_PROCESSED_FILE_PATH)
+      @csv_options = build_options_hash(Configuration.for 'csv_options')
     end
 
     def load_batter_data
       @batters = []
       @batters_by_id = {}
-
       begin
         CSV.foreach(@file_path, @csv_options) do |row|
           batter_data = Batter.initialize_key_names row
-          next unless data_clean?(batter_data)
+          next unless batter_data_clean?(batter_data)
           batter = find_or_create_batter(batter_data.player_id)
           batter.batter_data_by_year << transform_data(batter_data)
         end
@@ -37,8 +64,10 @@ module FantasyBaseball
     #    private
 
     def build_options_hash(options)
+#      return {} if options.empty?
        hash = {}
        hash[:headers] = options.headers
+#TODO change these lines like this: hash[:headers] = options.fetch(:headers)
        hash[:col_sep] = options.col_sep
        hash[:row_sep] = options.row_sep
        hash[:quote_char] = options.quote_char
@@ -52,6 +81,18 @@ module FantasyBaseball
        hash[:force_quotes] = options.force_quotes
        hash[:encoding] = options.encoding
        hash
+    end
+
+    def find_or_create_roster_entry(data)
+
+      if @players_by_id[data.player_id]
+        @players_by_id[data.player_id]
+      else
+        temp_roster = RosterEntry.new(data)
+        @players_by_id[data.player_id] = temp_roster
+        @roster << temp_roster
+      end
+
     end
 
     def find_or_create_batter(player_id)
@@ -105,20 +146,27 @@ module FantasyBaseball
       end
     end
 
-    def clean_input_file(file_path)
-      pre_processed_file_path = File.expand_path('data/Batting-pre-processed.csv')
+    def clean_input_file(file_path, pre_processed_file_path)
       command = "tr '\\n' '\\r' < #{file_path} > #{pre_processed_file_path}"
       system(command)
       pre_processed_file_path
     end
 
-    def update_batter_data(batters, data)
-      batters[data.player_id] = Batter.new(player_id: data.player_id) unless batters[data.player_id]
-      batter = batters[data.player_id]
-      batter.update_batting_data(data)
+#    def update_batter_data(batters, data)
+#      batters[data.player_id] = Batter.new(player_id: data.player_id) unless batters[data.player_id]
+#      batter = batters[data.player_id]
+#      batter.update_batting_data(data)
+#    end
+
+    def roster_data_clean?(data)
+      valid_string?(data.player_id) &&
+        valid_string?(data.player_birth_year) &&
+        valid_string?(data.player_first_name) &&
+        valid_string?(data.player_last_name) &&
+        valid_string?(data.player_full_name)
     end
 
-    def data_clean?(data)
+    def batting_data_clean?(data)
       valid_string?(data.player_id) &&
         valid_string?(data.year_id) &&
         valid_string?(data.league) &&
@@ -143,14 +191,16 @@ module FantasyBaseball
       value.is_a? Integer
     end
 
-    def log_successful_import(file_path)
+    def log_successful_import(file_path, line_count)
       Syslog.open('FantasyBaseball', Syslog::LOG_PID, Syslog::LOG_LOCAL5)
-      Syslog.log(Syslog::LOG_INFO, "Successful File Import => file_path = #{file_path}")
+      Syslog.log(Syslog::LOG_INFO, "Successful File Import => file_path = #{file_path}, line_count = #{line_count}")
+      Syslog.close()
     end
 
     def log_failed_import(file_path, exception)
       Syslog.open('FantasyBaseball', Syslog::LOG_PID, Syslog::LOG_LOCAL5)
       Syslog.log(Syslog::LOG_ERR, "File Import Failed => file_path = #{file_path} Exception Message: #{exception.inspect}")
+      Syslog.close()
     end
   end
 

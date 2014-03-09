@@ -9,22 +9,8 @@ module FantasyBaseball
       :caught_stealing, :player, :batting_data, :batter_data_by_year
 
     def initialize(args)
-      @year_id = args[:year_id]
-      @league = args[:league]
-      @team_id = args[:team_id]
-      @games = args[:games]
-      @at_bats = args[:at_bats]
-      @runs = args[:runs]
-      @hits = args[:hits]
-      @doubles = args[:doubles]
-      @triples = args[:triples]
-      @home_runs = args[:home_runs]
-      @runs_batted_in = args[:runs_batted_in]
-      @stolen_bases = args[:stolen_bases]
-      @caught_stealing = args[:caught_stealing]
       super(args)
-      @batting_data = {}
-      @batter_data_by_year = []
+      @batter_data_by_year = BatterDataByYear.new(args[:player_id])
     end
 
     def self.initialize_key_names(row)

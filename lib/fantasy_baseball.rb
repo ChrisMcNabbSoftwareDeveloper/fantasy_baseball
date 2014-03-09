@@ -4,24 +4,32 @@ require_relative '../config/configuration'
 
 module FantasyBaseball
 
+  roster_config = Configuration.for 'player_roster'
+  @roster_file_path = File.expand_path(roster_config.input_file_name)
   batting_config = Configuration.for 'batting_input_file'
-  @batting_file_path = File.expand_path(batting_config.file_name)
+  @batting_file_path = File.expand_path(batting_config.input_file_name)
 
   # future expansion
   pitching_config = Configuration.for 'pitching_input_file'
-  @pitching_file_path = File.expand_path(pitching_config.file_name)
+  @pitching_file_path = File.expand_path(pitching_config.input_file_name)
 
   def self.exec
     welcome
-    batters = load_batters
+    roster = load_player_roster
+    batters = load_batters(roster)
     most_improved_batting_average(batters, "2009", "2010")
 #    oakland_slugging_percentage(batters, "2007")
 #    triple_crown_winner(batters, "2011", "2012")
   end
 
-  def self.load_batters
-    batters = DataLoader.new(@batting_file_path)
-    batters.load_batter_data
+  def self.load_player_roster
+    roster = DataLoader.new(@roster_file_path)
+    roster.import_player_roster
+  end
+
+  def self.load_batters(roster)
+    batters = DataLoader.new(@batting_file_path, roster)
+    batters.load_batting_data
   end
 
   # future expansion - not implemented, yet
