@@ -38,6 +38,26 @@ module FantasyBaseball
       return ArgumentError if file_path.empty?
       @file_path = clean_input_file(file_path, BATTING_PRE_PROCESSED_FILE_PATH)
       @csv_options = build_options_hash(Configuration.for 'csv_options')
+      @batters = []
+      @batters_by_id = {}
+      @line_count = 0
+      begin
+        CSV.foreach(@file_path, @csv_options) do |row|
+          @line_count += 1
+          batter_data = Batter.initialize_key_names row
+          next unless batter_data_clean?(batter_data)
+          batter = find_or_create_batter(batter_data)
+          batter.batter_data_by_year << transform_data(batter_data)
+        end
+        log_successful_import(@file_path, @line_count)
+      rescue CSV::MalformedCSVError => error
+        log_failed_import(@file_path, error)
+        raise
+      rescue => error
+        log_failed_import(@file_path, error)
+        raise
+      end
+      @batters
     end
 
     def load_batter_data
@@ -84,7 +104,6 @@ module FantasyBaseball
     end
 
     def find_or_create_roster_entry(data)
-
       if @players_by_id[data.player_id]
         @players_by_id[data.player_id]
       else
@@ -92,14 +111,13 @@ module FantasyBaseball
         @players_by_id[data.player_id] = temp_roster
         @roster << temp_roster
       end
-
     end
 
-    def find_or_create_batter(player_id)
-      if @batters_by_id[player_id]
-        @batters_by_id[player_id]
+    def find_or_create_batter(data)
+      if @batters_by_id[data.player_id]
+        @batters_by_id[data.player_id]
       else
-        temp_batter = Batter.new(player_id: player_id)
+        temp_batter = Batter.new(data)
         @batters_by_id[player_id] = temp_batter
         @batters << temp_batter
         temp_batter

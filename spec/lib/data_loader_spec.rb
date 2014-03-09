@@ -11,7 +11,7 @@ module FantasyBaseball
         @roster = data_loader.load_player_roster(file_path)
       end
 
-      it "should be a kind of data loader" do
+      it "should be a kind of array" do
         expect(@roster).to be_kind_of(Array)
       end
       it "should have a valid player_id" do
@@ -29,10 +29,9 @@ module FantasyBaseball
       it "should have a valid player_full_name" do
         expect(@roster[0].player_full_name).to eq("Hank Aaron")
       end
-
     end
 
-    pending    describe "data loader for roster" do
+    describe "data loader for roster" do
       before(:each) do
         @file_path = File.expand_path('data/Master-small.csv')
         @roster = DataLoader.new
@@ -49,12 +48,12 @@ module FantasyBaseball
         roster = DataLoader.new
         roster.load_player_roster(File.expand_path(roster_file_name))
         batting_file_name = 'data/Batting-07-12.csv'
-        @batters = DataLoader.new
-        @batters.load_batting_data(File.expand_path(batting_file_name), roster)
+        data_loader = DataLoader.new
+        @batters = data_loader.load_batting_data(File.expand_path(batting_file_name), roster)
       end
 
-      pending      it "should be a kind of data loader" do
-        expect(@batters).to be_kind_of(DataLoader)
+      it "should be a kind of array" do
+        expect(@batters).to be_kind_of(Array)
       end
     end
 
@@ -64,11 +63,12 @@ module FantasyBaseball
         roster = DataLoader.new
         roster.load_player_roster(File.expand_path(roster_file_name))
         batting_file_name = 'data/Batting-07-12.csv'
-        @batters = DataLoader.new
+        data_loader = DataLoader.new
+        @batters = data_loader.load_batting_data(nil,nil)
       end
 
       xit "should return an ArgumentError if no file_path parameter passed" do
-        expect(@batters.load_batting_data).to raise_error
+        expect(@batters).to raise_error
       end
     end
 
