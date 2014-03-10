@@ -6,7 +6,7 @@ module FantasyBaseball
     describe "new batter data by year" do
 
       let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => '142', 'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60, 'SB' => 21, 'CS' => 5 } }
-      let(:data) { Statistics.initialize_key_names row }
+      let(:data) { Statistics.initialize_batting_data row }
 
       before(:each) do
         @batter_data_by_year = BatterDataByYear.new(data)

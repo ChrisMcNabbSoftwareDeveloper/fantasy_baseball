@@ -7,7 +7,7 @@ module FantasyBaseball
       :caught_stealing, :batting_average
 
     def initialize(args)
-#      return ArgumentError if args.nil?
+      raise ArgumentError.new 'args cannot be nil' if args.nil?
       @player_id = args.player_id
       @year_id = args.year_id
       @league = args.league

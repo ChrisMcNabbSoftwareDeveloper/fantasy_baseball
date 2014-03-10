@@ -5,7 +5,7 @@ module FantasyBaseball
     attr_accessor :player_id, :player_first_name, :player_last_name, :player_birth_year, :player_full_name
 
     def initialize(args)
-#      return ArgumentError if args.empty?
+      raise ArgumentError.new 'args cannot be nil' if args.nil?
       @player_id = args.player_id
       @player_first_name = args.player_first_name
       @player_last_name = args.player_last_name

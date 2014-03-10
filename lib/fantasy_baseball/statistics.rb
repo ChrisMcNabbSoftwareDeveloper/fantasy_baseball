@@ -4,7 +4,6 @@ module FantasyBaseball
     attr_accessor :player_id, :year_id, :league, :team_id, :games, :at_bats, :runs, :hits,
       :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases,
       :caught_stealing, :player_birth_year, :player_first_name, :player_last_name
-    #, :player, :batting_data, :batter_data_by_year
 
     def initialize
     end

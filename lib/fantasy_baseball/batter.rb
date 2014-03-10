@@ -1,6 +1,5 @@
 require 'csv'
 require_relative 'player'
-require_relative '../../lib/fantasy_baseball/batter_data_by_year'
 
 module FantasyBaseball
 
@@ -8,7 +7,7 @@ module FantasyBaseball
     attr_accessor :player_id, :player_full_name, :batter_data_by_year
 
     def initialize(args, roster)
-      raise ArgumentError.new unless args
+      raise ArgumentError.new 'args and roster cannot be nil' if (args.nil? || roster.nil?)
       super(args, roster)
       @batter_data_by_year = BatterDataByYear.new(args)
     end
