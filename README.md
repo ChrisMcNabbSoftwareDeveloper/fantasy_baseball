@@ -139,6 +139,8 @@
       -- The report values shown below reflect aggregated statistics
          from the Batting-07-12.csv and the Master-small.csv data files.
      ***************************************************************************
+     status: loading player roster file...
+     status: loading batting data file...
      ***************************************************************************
      Most Improved Batting Average
      -----------------------------

@@ -2,6 +2,8 @@ require 'csv'
 require 'syslog'
 require 'configuration'
 require_relative '../../lib/fantasy_baseball/statistics'
+require_relative 'roster_entry'
+require_relative 'batter_data_by_year'
 
 module FantasyBaseball
 
@@ -65,10 +67,9 @@ module FantasyBaseball
     #    private
 
     def build_options_hash(options)
-#      return {} if options.empty?
+      raise ArgumentError 'options cannot be nil' if options.nil?
        hash = {}
        hash[:headers] = options.headers
-#TODO change these lines like this: hash[:headers] = options.fetch(:headers)
        hash[:col_sep] = options.col_sep
        hash[:row_sep] = options.row_sep
        hash[:quote_char] = options.quote_char
@@ -98,13 +99,6 @@ module FantasyBaseball
       if @batters_by_id[data.player_id]
         @batters_by_id[data.player_id]
       else
-        # foo = Batter.new(data, roster)
-        # <Batter:
-        #         @player_id="abreubo",
-        #         @player_full_name="Hank Aaron",
-        #         @batter_data_by_year=[{ ...data... }, { ...data...}, ...]
-        #
-        #
         temp_batter = Batter.new(data, roster)
         @batters_by_id[data.player_id] = temp_batter
         @batters << temp_batter

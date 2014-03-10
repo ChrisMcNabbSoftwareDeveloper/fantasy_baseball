@@ -4,160 +4,64 @@ module FantasyBaseball
 
   describe DataLoader do
 
-    describe "data loader for roster" do
-      before(:all) do
-        file_path = File.expand_path('data/Master-small.csv')
-        data_loader = DataLoader.new
-        @roster = data_loader.load_player_roster(file_path)
-      end
+    before(:all) do
+      file_path = File.expand_path('data/Master-small.csv')
+      data_loader = DataLoader.new
+      @roster = data_loader.load_player_roster(file_path)
+    end
 
+    describe "data loader for roster" do
       it "should be a kind of array" do
-        puts @roster
         expect(@roster).to be_kind_of(Array)
       end
-pending      it "should have a valid player_id" do
+      it "should have a valid player_id" do
         expect(@roster[0].player_id).to eq("aaronha01")
       end
-pending      it "should have a valid player_first_name" do
+      it "should have a valid player_first_name" do
         expect(@roster[0].player_first_name).to eq("Hank")
       end
-pending      it "should have a valid player_last_name" do
+      it "should have a valid player_last_name" do
         expect(@roster[0].player_last_name).to eq("Aaron")
       end
-pending      it "should have a valid player_birth_year" do
+      it "should have a valid player_birth_year" do
         expect(@roster[0].player_birth_year).to eq("1934")
       end
-pending      it "should have a valid player_full_name" do
+      it "should have a valid player_full_name" do
         expect(@roster[0].player_full_name).to eq("Hank Aaron")
       end
     end
 
-pending    describe "data loader for roster" do
+    describe "data loader for batting data" do
       before(:each) do
-        @file_path = File.expand_path('data/Master-small.csv')
-        @roster = DataLoader.new
-      end
-
-      xit "should return an ArgumentError if no file_path parameter passed" do
-        expect(@roster.load_player_roster).to raise_error
-      end
-    end
-
-pending    describe "data loader for batting data" do
-      before(:each) do
-        roster_file_name = 'data/Master-small.csv'
-        roster = DataLoader.new
-        roster.load_player_roster(File.expand_path(roster_file_name))
-        batting_file_name = 'data/Batting-07-12.csv'
+        batting_file_path = File.expand_path('data/Batting-07-12.csv')
         data_loader = DataLoader.new
-        @batters = data_loader.load_batting_data(File.expand_path(batting_file_name), roster)
+        @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
+        @batter_to_test = @batters[3]
       end
 
       it "should be a kind of array" do
         expect(@batters).to be_kind_of(Array)
       end
-    end
 
-pending    describe "data loader for batting data" do
-      before(:each) do
-        roster_file_name = 'data/Master-small.csv'
-        roster = DataLoader.new
-        roster.load_player_roster(File.expand_path(roster_file_name))
-        batting_file_name = 'data/Batting-07-12.csv'
-        data_loader = DataLoader.new
-        @batters = data_loader.load_batting_data(nil,nil)
-      end
-
-      xit "should return an ArgumentError if no file_path parameter passed" do
-        expect{@batters}.to raise_error
-      end
-    end
-
-pending    describe "#load_batter_data" do
-      before(:all) do
-        file_name = 'data/Batting-07-12.csv'
-        data_loader = DataLoader.new(File.expand_path(file_name))
-        batters = data_loader.load_batter_data
-        @batter_to_test = batters[3]
-        @batter_data_by_year = @batter_to_test.batter_data_by_year[0]
-        @first_batter_data_by_year = @batter_data_by_year[:batter_data_by_year]
-      end
-
-      it "should load batter data and verify batter 4's player_id" do
-        expect(@batter_to_test.player_id).to eq("abreubo01")
-      end
-      pending it "should verify batter_data_by_year player_id" do
-        expect(@batter_data_by_year[:player_id]).to eq("abreubo01")
-      end
-      pending it "should verify player_full_name" do
-        expect(@batter_data_by_year[:player_full_name]).to eq("Hank Aaron")
-      end
-      pending it "should verify player id inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:player_id]).to eq("abreubo01")
-      end
-      pending it "should verify year_id inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:year_id]).to eq("2012")
-      end
-      pending it "should verify league inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:league]).to eq("AL")
-      end
-      pending it "should verify team_id inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:team_id]).to eq("LAA")
-      end
-      pending it "should verify games inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:games]).to eq(8)
-      end
-      pending it "should verify at_bats inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:at_bats]).to eq(24)
-      end
-      pending it "should verify runs inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:runs]).to eq(1)
-      end
-      pending it "should verify hpending its inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:hits]).to eq(5)
-      end
-      pending it "should verify doubles inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:doubles]).to eq(3)
-      end
-      pending it "should verify triples inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:triples]).to eq(0)
-      end
-      pending it "should verify home_runs inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:home_runs]).to eq(0)
-      end
-      pending it "should verify runs_batted_in inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:runs_batted_in]).to eq(5)
-      end
-      pending it "should verify stolen_bases inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:stolen_bases]).to eq(0)
-      end
-      pending it "should verify caught_stealing inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:caught_stealing]).to eq(0)
-      end
-      pending it "should verify batting_average inside batter_data_by_year" do
-        expect(@first_batter_data_by_year[:batting_average]).to eq(0.208)
+      it "should have a valid batter_data_by_year" do
+        expect(@batter_to_test.batter_data_by_year.player_id).to eq(@player_id="abreubo01")
+        expect(@batter_to_test.batter_data_by_year.year_id).to eq(@year_id="2012")
+        expect(@batter_to_test.batter_data_by_year.league).to eq(@league="AL")
+        expect(@batter_to_test.batter_data_by_year.team_id).to eq(@team_id="LAA")
+        expect(@batter_to_test.batter_data_by_year.games).to eq(@games=8)
+        expect(@batter_to_test.batter_data_by_year.at_bats).to eq(@at_bats=24)
+        expect(@batter_to_test.batter_data_by_year.runs).to eq(@runs=1)
+        expect(@batter_to_test.batter_data_by_year.hits).to eq(@hits=5)
+        expect(@batter_to_test.batter_data_by_year.doubles).to eq(@doubles=3)
+        expect(@batter_to_test.batter_data_by_year.triples).to eq(@triples=0)
+        expect(@batter_to_test.batter_data_by_year.home_runs).to eq(@home_runs=0)
+        expect(@batter_to_test.batter_data_by_year.runs_batted_in).to eq(@runs_batted_in=5)
+        expect(@batter_to_test.batter_data_by_year.stolen_bases).to eq(@stolen_bases=0)
+        expect(@batter_to_test.batter_data_by_year.caught_stealing).to eq(@caught_stealing=0)
+        expect(@batter_to_test.batter_data_by_year.batting_average).to eq(@batting_average=0.208)
       end
     end
-
-    # private methods - usind tdd to drive out methods - will delete these tests afterward
-    pending    describe "get_data_by_year" do
-      let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => '142', 'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60, 'SB' => 21, 'CS' => 5 } }
-      let(:batter_data) { Statistics.initialize_batting_data row }
-
-      it "should return data hash for year" do
-        actual_hash = @data_loader.get_data_by_year(batter_data)
-        compare_hash = {:player_id=>"aardsda01", :year_id=>2011,
-                        :league=>"AL", :team_id=>"LAA", :games=>142,
-                        :at_bats=>502, :runs=>54, :hits=>127,
-                        :doubles=>30, :triples=>1, :home_runs=>8,
-                        :runs_batted_in=>60, :stolen_bases=>21,
-                        :caught_stealing=>5, :batting_average=>0.253
-        }
-        expect(actual_hash).to eq(compare_hash)
-      end
-    end
-
 
   end
-
 end
+

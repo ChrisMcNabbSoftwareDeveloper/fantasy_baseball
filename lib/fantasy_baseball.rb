@@ -15,21 +15,22 @@ module FantasyBaseball
 
   def self.exec
     welcome
-    roster = load_player_roster
-    batters = load_batters(roster)
+    batters = load_batters(load_player_roster)
     most_improved_batting_average(batters, "2009", "2010")
-#    oakland_slugging_percentage(batters, "2007")
-#    triple_crown_winner(batters, "2011", "2012")
+    oakland_slugging_percentage(batters, "2007")
+    triple_crown_winner(batters, "2011", "2012")
   end
 
   def self.load_player_roster
-    roster = DataLoader.new(@roster_file_path)
-    roster.import_player_roster
+    puts "status: loading player roster file..."
+    data_loader = DataLoader.new
+    data_loader.load_player_roster(@roster_file_path)
   end
 
   def self.load_batters(roster)
-    batters = DataLoader.new(@batting_file_path, roster)
-    batters.load_batting_data
+    puts "status: loading batting data file..."
+    data_loader = DataLoader.new
+    data_loader.load_batting_data(@batting_file_path, roster)
   end
 
   # future expansion - not implemented, yet
@@ -52,21 +53,25 @@ module FantasyBaseball
   def self.most_improved_batting_average(*args)
     raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
 
-#    most_improved_player = calculate_most_improved_batting_average(*args)
+#    most_improved_player = Statistics.most_improved_batting_average(*args)
 
     puts "*" * 80
     puts "Most Improved Batting Average"
     puts "-----------------------------"
     puts "(players must have at least 200 at-bats.)"
 #    puts "   #{most_improved_player.first_name} #{most_improved_player.last_name} (#{most_improved_player.player_id})"
-    puts "   Hank Aaron (aaronha01)" # <= example - delete
+    puts "   Hank Aaron (aaronha01)" # <= example
   end
 
   def self.oakland_slugging_percentage(*args)
     raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
 
-    batters = args[0] if args[0]
-    year = args[1] if args[1]
+#    use for output dislay below
+#    batters = args[:batters]
+#    year_id = args[:year_id]
+#    team_id = args[:team_id]
+
+#    oakland_slugging_percentage = Statistics.slugging_percentage(batters, year, team_id)
 
     puts "*" * 80
     puts "Oakland A's Slugging Percentage in 2007"
@@ -77,9 +82,12 @@ module FantasyBaseball
   def self.triple_crown_winner(*args)
     raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
 
-    batters = args[0] if args[0]
-    first_year = args[1] if args[1]
-    second_year = args[2] if args[2]
+#    use for output display below
+#    batters = args[0] if args[0]
+#    first_year = args[1] if args[1]
+#    second_year = args[2] if args[2]
+
+#    triple_crown_winner = Statistics.triple_crown_winner(args)
 
     puts "*" * 80
     puts "Triple Crown Winner for AL and NL in 2011 and 2012"
