@@ -46,32 +46,12 @@ module FantasyBaseball
         CSV.foreach(@file_path, @csv_options) do |row|
           @line_count += 1
           batter_data = Statistics.initialize_batting_data row
-          next unless batter_data_clean?(batter_data)
-          batter = find_or_create_batter(batter_data)
-          batter.batter_data_by_year << transform_data(batter_data)
+          next unless batting_data_clean?(batter_data)
+          find_or_create_batter(batter_data, roster)
+#          batter.batter_data_by_year << transform_data(batter_data)
+
         end
         log_successful_import(@file_path, @line_count)
-      rescue CSV::MalformedCSVError => error
-        log_failed_import(@file_path, error)
-        raise
-      rescue => error
-        log_failed_import(@file_path, error)
-        raise
-      end
-      @batters
-    end
-
-    def load_batter_data
-      @batters = []
-      @batters_by_id = {}
-      begin
-        CSV.foreach(@file_path, @csv_options) do |row|
-          batter_data = Statistics.initialize_batting_data row
-          next unless batter_data_clean?(batter_data)
-          batter = find_or_create_batter(batter_data.player_id)
-          batter.batter_data_by_year << transform_data(batter_data)
-        end
-        log_successful_import(@file_path)
       rescue CSV::MalformedCSVError => error
         log_failed_import(@file_path, error)
         raise
@@ -114,27 +94,22 @@ module FantasyBaseball
       end
     end
 
-    def find_or_create_batter(data)
+    def find_or_create_batter(data,roster)
       if @batters_by_id[data.player_id]
         @batters_by_id[data.player_id]
       else
-        temp_batter = Batter.new(data)
-        @batters_by_id[player_id] = temp_batter
+        # foo = Batter.new(data, roster)
+        # <Batter:
+        #         @player_id="abreubo",
+        #         @player_full_name="Hank Aaron",
+        #         @batter_data_by_year=[{ ...data... }, { ...data...}, ...]
+        #
+        #
+        temp_batter = Batter.new(data, roster)
+        @batters_by_id[data.player_id] = temp_batter
         @batters << temp_batter
         temp_batter
       end
-    end
-
-    def transform_data(batter_data)
-      hash = {}
-      hash[:player_id] = batter_data.player_id
-      hash[:player_full_name] = get_player_full_name(batter_data.player_id)
-      hash[:batter_data_by_year] = get_data_by_year(batter_data)
-      hash
-    end
-
-    def get_player_full_name(player_id)
-      "Hank Aaron"
     end
 
     def get_data_by_year(batter_data)
@@ -181,8 +156,7 @@ module FantasyBaseball
       valid_string?(data.player_id) &&
         valid_string?(data.player_birth_year) &&
         valid_string?(data.player_first_name) &&
-        valid_string?(data.player_last_name) &&
-        valid_string?(data.player_full_name)
+        valid_string?(data.player_last_name)
     end
 
     def batting_data_clean?(data)

@@ -1,19 +1,25 @@
 module FantasyBaseball
 
   class Player
-    attr_accessor :player_id, :player_birth_year, :player_first_name, :player_last_name
+    attr_accessor :player_id, :player_full_name
 
-    def initialize(args={})
-      @player_id = args[:player_id]
+    def initialize(args={}, roster)
+      return ArgumentError unless args
+      @player_id = args.player_id
+      @player_full_name = get_player_full_name(args, roster)
     end
 
-    def self.initialize_key_names(row)
-      data = Player.new(player_id: row['playerID'])
-      data.player_id = row['playerID']
-      data.player_birth_year = row['birthYear']
-      data.player_first_name = row['nameFirst']
-      data.player_last_name = row['nameLast']
-      data
+    private
+
+    def get_player_full_name(args, roster)
+      player_id_to_find = args.player_id
+      roster.each do |r|
+        if r.player_id == player_id_to_find
+          return ( r.player_first_name + " " + r.player_last_name )
+        else
+          "no full name"
+        end
+      end
     end
 
   end
