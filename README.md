@@ -17,7 +17,7 @@
 >
 > 3.   Outputs the aggregated statistics to the screen (STDOUT) for user to view
 >
->
+
 # USAGE
 >
 > ### To run:
