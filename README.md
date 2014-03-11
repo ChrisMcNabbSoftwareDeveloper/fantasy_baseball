@@ -7,7 +7,7 @@
 >
 > ## Fantasy Baseball Statistics - "Play Ball!"
 >
-> ## This is a Ruby CLI program for computing baseball statistics.
+> ### This is a Ruby CLI program for computing baseball statistics.
 >
 > The program runs and performs the following:
 >
@@ -155,12 +155,20 @@
      --------------------------------------------------
      2011:
      AL:   Johnny Abrego (abregojo01)
-     NL:   Johnny Abrego (abregojo01)
+     NL:   Ed Abbaticchio (abbated01)
      2012:
-     AL:   Johnny Abrego (abregojo01)
-     NL:   Johnny Abrego (abregojo01)
+     AL:   Francis Ambercrombie (abercda01)
+     NL:   Toots Shultz (shultto01)
      ***************************************************************************
 >
 
+# TESTS
+>
+> I used rspec in the development of this project so to run all the tests, simply run,
+>
+     $ rspec
+
+> ...in the project root directory.  It will run the suite of all the tests.
+> NOTE: There is a place in the middle during the runnign of all the tests, where the screen appears to "hang" for a minute or two.  This is the test where it is reading in over 18,000 records from the input CSV data file, so it's not "hung"...just merely reading in a lot of data.
 
 
