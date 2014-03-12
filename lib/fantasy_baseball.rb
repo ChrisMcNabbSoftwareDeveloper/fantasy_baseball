@@ -70,10 +70,8 @@ module FantasyBaseball
     puts "*" * 80
     puts "Most Improved Batting Average"
     puts "-----------------------------"
-    #puts "(players must have at least #{args[:limit_at_bats].to_s} at-bats.)"
-    #puts "args => #{args.inspect}"
-#    puts "#{most_improved_player}"
-#    puts "#{most_improved_player[:player_full_name]}"
+    puts "(players must have at least #{args[1][:limit_at_bats].to_s} at-bats.)"
+#    puts "args => #{args.inspect}"
     puts "   #{most_improved_player[:player_full_name]} (#{most_improved_player[:player_id]})"
   end
 
