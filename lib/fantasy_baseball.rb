@@ -64,13 +64,17 @@ module FantasyBaseball
     puts "args => #{args.inspect}"
     puts '-' * 120
 
-    #    most_improved_player = Statistics.most_improved_batting_average(*args)
+    batting_stats = Statistics.new
+    most_improved_player = batting_stats.most_improved_batting_average(*args)
 
     puts "*" * 80
     puts "Most Improved Batting Average"
     puts "-----------------------------"
-    puts "(players must have at least #{args[:options].limit_at_bats.to_s} at-bats.)"
-    #    puts "   #{most_improved_player.player_full_name} (#{most_improved_player.player_id})"
+    #puts "(players must have at least #{args[:limit_at_bats].to_s} at-bats.)"
+    #puts "args => #{args.inspect}"
+#    puts "#{most_improved_player}"
+#    puts "#{most_improved_player[:player_full_name]}"
+    puts "   #{most_improved_player[:player_full_name]} (#{most_improved_player[:player_id]})"
   end
 
   def self.slugging_percentage(*args)
@@ -79,9 +83,9 @@ module FantasyBaseball
     #    slugging_percentage = Statistics.slugging_percentage(args[:batters], args[:year], args[:team_id])
 
     puts "*" * 80
-    puts "#{args[:team_id]} Slugging Percentage in #{args[:year]}"
+    #puts "#{args[:team_id]} Slugging Percentage in #{args[:year]}"
     puts "---------------------------------------"
-    puts "   #{slugging_percentage}% "
+    #puts "   #{slugging_percentage}% "
   end
 
   def self.triple_crown_header
@@ -95,9 +99,9 @@ module FantasyBaseball
 
     #    triple_crown_winner = Statistics.triple_crown_winner(args)
 
-    puts "Year: #{args[:year]}"                 # "2011:"
-    puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
-    puts "Player: #{triple_crown_winner}"
+    #puts "Year: #{args[:year]}"                 # "2011:"
+    #puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
+    #puts "Player: #{triple_crown_winner}"
     puts "*" * 80
 
   end

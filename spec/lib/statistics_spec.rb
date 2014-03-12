@@ -104,7 +104,7 @@ pending    describe "#batting_average_improvement" do
       end
     end
 
-    pending    describe "#most_improved_batting_average" do
+    describe "#most_improved_batting_average" do
       before(:all) do
         file_path = File.expand_path('data/Master-small.csv')
         data_loader = DataLoader.new
@@ -119,7 +119,7 @@ pending    describe "#batting_average_improvement" do
         batting_stats = Statistics.new
         most_improved = batting_stats.most_improved_batting_average(@batters, @options)
         puts "most_improved => #{most_improved}"
-        excpect(most_improved).to eq("hank aaron")
+        expect(most_improved[:player_id]).to eq("hamiljo03")
       end
     end
 
