@@ -32,33 +32,34 @@ module FantasyBaseball
     end
 
     describe "data loader for batting data" do
-      before(:each) do
+      before(:all) do
         batting_file_path = File.expand_path('data/Batting-07-12.csv')
         data_loader = DataLoader.new
         @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
-        @batter_to_test = @batters[3]
+        @batter_to_test = @batters["aardsda01"]
       end
 
-      it "should be a kind of array" do
-        expect(@batters).to be_kind_of(Array)
+      it "should be a kind of hash" do
+        expect(@batters).to be_kind_of(Hash)
       end
 
-      it "should have a valid batter_data_by_year" do
-        expect(@batter_to_test.batter_data_by_year.player_id).to eq(@player_id="abreubo01")
-        expect(@batter_to_test.batter_data_by_year.year_id).to eq(@year_id="2012")
-        expect(@batter_to_test.batter_data_by_year.league).to eq(@league="AL")
-        expect(@batter_to_test.batter_data_by_year.team_id).to eq(@team_id="LAA")
-        expect(@batter_to_test.batter_data_by_year.games).to eq(@games=8)
-        expect(@batter_to_test.batter_data_by_year.at_bats).to eq(@at_bats=24)
-        expect(@batter_to_test.batter_data_by_year.runs).to eq(@runs=1)
-        expect(@batter_to_test.batter_data_by_year.hits).to eq(@hits=5)
-        expect(@batter_to_test.batter_data_by_year.doubles).to eq(@doubles=3)
-        expect(@batter_to_test.batter_data_by_year.triples).to eq(@triples=0)
-        expect(@batter_to_test.batter_data_by_year.home_runs).to eq(@home_runs=0)
-        expect(@batter_to_test.batter_data_by_year.runs_batted_in).to eq(@runs_batted_in=5)
-        expect(@batter_to_test.batter_data_by_year.stolen_bases).to eq(@stolen_bases=0)
-        expect(@batter_to_test.batter_data_by_year.caught_stealing).to eq(@caught_stealing=0)
-        expect(@batter_to_test.batter_data_by_year.batting_average).to eq(@batting_average=0.208)
+      it "should have valid data for player abreubo01" do
+        expect(@batter_to_test[0].player_id).to eq("aardsda01")
+        expect(@batter_to_test[0].year_id).to eq(@year_id="2012")
+        expect(@batter_to_test[0].league).to eq(@league="AL")
+        expect(@batter_to_test[0].team_id).to eq(@team_id="NYA")
+        expect(@batter_to_test[0].games).to eq(@games=1)
+        expect(@batter_to_test[0].at_bats).to eq(@at_bats=0)
+        expect(@batter_to_test[0].runs).to eq(@runs=0)
+        expect(@batter_to_test[0].hits).to eq(@hits=0)
+        expect(@batter_to_test[0].doubles).to eq(@doubles=0)
+        expect(@batter_to_test[0].triples).to eq(@triples=0)
+        expect(@batter_to_test[0].home_runs).to eq(@home_runs=0)
+        expect(@batter_to_test[0].runs_batted_in).to eq(@runs_batted_in=0)
+        expect(@batter_to_test[0].stolen_bases).to eq(@stolen_bases=0)
+        expect(@batter_to_test[0].caught_stealing).to eq(@caught_stealing=0)
+        expect(@batter_to_test[0].batting_average).to eq(@batting_average=0)
+        expect(@batter_to_test[0].player_full_name).to eq(@player_full_name="David Aardsma")
       end
     end
 

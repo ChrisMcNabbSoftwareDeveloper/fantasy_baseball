@@ -15,10 +15,17 @@ module FantasyBaseball
 
   def self.exec
     welcome
-    batters = load_batters(load_player_roster)
-    most_improved_batting_average(batters, "2009", "2010")
-    oakland_slugging_percentage(batters, "2007")
-    triple_crown_winner(batters, "2011", "2012")
+    batters = (load_batters(load_player_roster))
+
+    most_improved_batting_average(batters, {:base_year => "2009", :compare_year => "2010", :limit_at_bats => 200} )
+
+    slugging_percentage(batters, {:team => "OAK", :year => "2007"} )
+
+    triple_crown_header
+    triple_crown_winner(batters, {:year => "2011", :league => "AL"} )
+    triple_crown_winner(batters, {:year => "2011", :league => "NL"} )
+    triple_crown_winner(batters, {:year => "2012", :league => "AL"} )
+    triple_crown_winner(batters, {:year => "2012", :league => "NL"} )
   end
 
   def self.load_player_roster
@@ -51,54 +58,48 @@ module FantasyBaseball
   end
 
   def self.most_improved_batting_average(*args)
-    raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
+    raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-#    most_improved_player = Statistics.most_improved_batting_average(*args)
+    puts '-' * 120
+    puts "args => #{args.inspect}"
+    puts '-' * 120
+
+    #    most_improved_player = Statistics.most_improved_batting_average(*args)
 
     puts "*" * 80
     puts "Most Improved Batting Average"
     puts "-----------------------------"
-    puts "(players must have at least 200 at-bats.)"
-#    puts "   #{most_improved_player.first_name} #{most_improved_player.last_name} (#{most_improved_player.player_id})"
-    puts "   Hank Aaron (aaronha01)" # <= example
+    puts "(players must have at least #{args[:options].limit_at_bats.to_s} at-bats.)"
+    #    puts "   #{most_improved_player.player_full_name} (#{most_improved_player.player_id})"
   end
 
-  def self.oakland_slugging_percentage(*args)
-    raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
+  def self.slugging_percentage(*args)
+    raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-#    use for output dislay below
-#    batters = args[:batters]
-#    year_id = args[:year_id]
-#    team_id = args[:team_id]
-
-#    oakland_slugging_percentage = Statistics.slugging_percentage(batters, year, team_id)
+    #    slugging_percentage = Statistics.slugging_percentage(args[:batters], args[:year], args[:team_id])
 
     puts "*" * 80
-    puts "Oakland A's Slugging Percentage in 2007"
+    puts "#{args[:team_id]} Slugging Percentage in #{args[:year]}"
     puts "---------------------------------------"
-    puts "   42% "
+    puts "   #{slugging_percentage}% "
+  end
+
+  def self.triple_crown_header
+    puts "*" * 80
+    puts "Triple Crown Winner(s)"
+    puts "--------------------------------------------------"
   end
 
   def self.triple_crown_winner(*args)
-    raise ArgumentError, "Batter Argument is nil. Please provide valid batter argument.", caller if args[0].nil?
+    raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-#    use for output display below
-#    batters = args[0] if args[0]
-#    first_year = args[1] if args[1]
-#    second_year = args[2] if args[2]
+    #    triple_crown_winner = Statistics.triple_crown_winner(args)
 
-#    triple_crown_winner = Statistics.triple_crown_winner(args)
-
+    puts "Year: #{args[:year]}"                 # "2011:"
+    puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
+    puts "Player: #{triple_crown_winner}"
     puts "*" * 80
-    puts "Triple Crown Winner for AL and NL in 2011 and 2012"
-    puts "--------------------------------------------------"
-    puts "2011:"
-    puts "AL:   Johnny Abrego (abregojo01) "
-    puts "NL:   Johnny Abrego (abregojo01) "
-    puts "2012:"
-    puts "AL:   Johnny Abrego (abregojo01) "
-    puts "NL:   Johnny Abrego (abregojo01) "
-    puts "*" * 80
+
   end
 
 end

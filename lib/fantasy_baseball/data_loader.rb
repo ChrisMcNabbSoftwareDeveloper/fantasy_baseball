@@ -39,29 +39,37 @@ module FantasyBaseball
 
     def load_batting_data(file_path, roster)
       return ArgumentError if file_path.empty?
-      @file_path = clean_input_file(file_path, BATTING_PRE_PROCESSED_FILE_PATH)
-      @csv_options = build_options_hash(Configuration.for 'csv_options')
+      file_path = clean_input_file(file_path, BATTING_PRE_PROCESSED_FILE_PATH)
+      csv_options = build_options_hash(Configuration.for 'csv_options')
       @batters = []
       @batters_by_id = {}
       @line_count = 0
       begin
-        CSV.foreach(@file_path, @csv_options) do |row|
+        CSV.foreach(file_path, csv_options) do |row|
           @line_count += 1
           batter_data = Statistics.initialize_batting_data row
+
+#puts '-' * 120
+#puts "batter_data => #{batter_data.inspect}"
+#puts '-' * 120
+
           next unless batting_data_clean?(batter_data)
           find_or_create_batter(batter_data, roster)
-#          batter.batter_data_by_year << transform_data(batter_data)
 
+#if @line_count == 10
+#  puts "@batters_by_id => #{@batters_by_id.inspect}"
+#  exit
+#end
         end
-        log_successful_import(@file_path, @line_count)
+        log_successful_import(file_path, @line_count)
       rescue CSV::MalformedCSVError => error
-        log_failed_import(@file_path, error)
+        log_failed_import(file_path, error)
         raise
       rescue => error
-        log_failed_import(@file_path, error)
+        log_failed_import(file_path, error)
         raise
       end
-      @batters
+      @batters_by_id
     end
 
     #    private
@@ -95,43 +103,45 @@ module FantasyBaseball
       end
     end
 
-    def find_or_create_batter(data,roster)
+    def find_or_create_batter(data, roster)
+
+#puts '-' * 120
+#puts "data => #{data.inspect}"
+#puts '-' * 120
+
+      data = get_batting_average(data)
+      data = update_full_name(data, roster)
+
       if @batters_by_id[data.player_id]
-        @batters_by_id[data.player_id]
+        @batters_by_id[data.player_id] << data
       else
-        temp_batter = Batter.new(data, roster)
-        @batters_by_id[data.player_id] = temp_batter
-        @batters << temp_batter
-        temp_batter
+        # =>             (key)         (value)
+        @batters_by_id[data.player_id] = [data]
       end
+
+#puts '-' * 120
+#puts "@batters_by_id.inspect => #{@batters_by_id.inspect}"
+#puts '-' * 120
+
     end
 
-    def get_data_by_year(batter_data)
-      hash = {}
-      hash[:player_id] = batter_data.player_id
-      hash[:year_id] = batter_data.year_id
-      hash[:league] = batter_data.league
-      hash[:team_id] = batter_data.team_id
-      hash[:games] = batter_data.games
-      hash[:at_bats] = batter_data.at_bats
-      hash[:runs] = batter_data.runs
-      hash[:hits] = batter_data.hits
-      hash[:doubles] = batter_data.doubles
-      hash[:triples] = batter_data.triples
-      hash[:home_runs] = batter_data.home_runs
-      hash[:runs_batted_in] = batter_data.runs_batted_in
-      hash[:stolen_bases] = batter_data.stolen_bases
-      hash[:caught_stealing] = batter_data.caught_stealing
-      hash[:batting_average] = compute_batting_average(batter_data.hits, batter_data.at_bats)
-      hash
+    def get_batting_average(data)
+      data.batting_average = compute_batting_average(data)
+      data
     end
 
-    def compute_batting_average(hits, at_bats)
-      if hits == 0 || at_bats == 0
+    def compute_batting_average(data)
+      if data.hits == 0 || data.at_bats == 0
         0
       else
-       Float("%.3g" % ((hits * 1.0) / at_bats))
+       Float("%.3g" % ((data.hits * 1.0) / data.at_bats))
       end
+    end
+
+    def update_full_name(data, roster)
+        temp_entry = roster.detect { |entry| next unless entry.player_id == data.player_id;  entry; }
+        data.player_full_name = temp_entry.player_first_name + " " + temp_entry.player_last_name
+        data
     end
 
     def clean_input_file(file_path, pre_processed_file_path)
@@ -139,12 +149,6 @@ module FantasyBaseball
       system(command)
       pre_processed_file_path
     end
-
-#    def update_batter_data(batters, data)
-#      batters[data.player_id] = Batter.new(player_id: data.player_id) unless batters[data.player_id]
-#      batter = batters[data.player_id]
-#      batter.update_batting_data(data)
-#    end
 
     def roster_data_clean?(data)
       valid_string?(data.player_id) &&
