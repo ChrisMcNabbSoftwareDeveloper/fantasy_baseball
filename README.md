@@ -82,7 +82,7 @@
 
 >
 >
-> Here's the setting for the <strong>Player Roster CSV</strong> file:
+> Here's the setting for the <strong><em>Player Roster CSV</em></strong> file:
 >
      $ Configuration.for('player_roster') {
          input_file_name 'data/Master-small.csv'
