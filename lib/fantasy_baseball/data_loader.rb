@@ -94,11 +94,6 @@ module FantasyBaseball
     end
 
     def find_or_create_batter(data, roster)
-
-#puts '-' * 120
-#puts "data => #{data.inspect}"
-#puts '-' * 120
-
       data = get_batting_average(data)
       data = update_full_name(data, roster)
 
@@ -108,11 +103,6 @@ module FantasyBaseball
         # =>             (key)         (value)
         @batters_by_id[data.player_id] = [data]
       end
-
-#puts '-' * 120
-#puts "@batters_by_id.inspect => #{@batters_by_id.inspect}"
-#puts '-' * 120
-
     end
 
     def get_batting_average(data)

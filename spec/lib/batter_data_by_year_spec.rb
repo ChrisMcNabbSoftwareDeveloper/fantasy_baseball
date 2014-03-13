@@ -64,21 +64,5 @@ module FantasyBaseball
       end
 
     end
-
-pending    describe "batter data by year with multiple rows of data" do
-
-      let(:row) { {'playerID' => 'aardsda01', 'yearID' => 2011, 'league' => 'AL', 'teamID' => 'LAA', 'G' => '142', 'AB' => 502, 'R' => 54, 'H' => 127, '2B' => 30, '3B' => 1, 'HR' => 8, 'RBI' => 60, 'SB' => 21, 'CS' => 5 } }
-      let(:data) { Statistics.initialize_batting_data row }
-
-      before(:each) do
-        @batter_data_by_year = BatterDataByYear.new(data)
-      end
-
-
-      it "should create all rows of data for each year for particular player" do
-
-      end
-    end
-
   end
 end
