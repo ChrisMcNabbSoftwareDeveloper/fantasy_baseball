@@ -39,7 +39,7 @@
      $ bundle
 >
 
-> Step 3: Setup logging* - add this entry to /etc/syslog.conf
+> Step 3: Setup logging* - add this entry to <strong><em>/etc/syslog.conf</em></strong>
 >
      local5.* /var/log/fantasy_baseball.log
 >
