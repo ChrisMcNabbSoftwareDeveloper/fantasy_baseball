@@ -50,7 +50,7 @@ module FantasyBaseball
       end
     end
 
-    describe "#most_improved_batting_average" do
+    describe "statistical calculations for report" do
       before(:all) do
         file_path = File.expand_path('data/Master-small.csv')
         data_loader = DataLoader.new
@@ -58,36 +58,64 @@ module FantasyBaseball
         batting_file_path = File.expand_path('data/Batting-07-12.csv')
         data_loader = DataLoader.new
         @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
-        @options = {:base_year => "2009", :compare_year => "2010", :limit_at_bats => 200}
+        @batting_stats = Statistics.new
       end
 
-      it "should return most improved batting average" do
-        batting_stats = Statistics.new
-        most_improved = batting_stats.most_improved_batting_average(@batters, @options)
-        puts "most_improved => #{most_improved}"
-        expect(most_improved[:player_id]).to eq("hamiljo03")
+      describe "#most_improved_batting_average" do
+        options = {:base_year => "2009", :compare_year => "2010", :limit_at_bats => 200}
+
+        it "should return most improved batting average" do
+          most_improved = @batting_stats.most_improved_batting_average(@batters, options)
+          expect(most_improved[:player_id]).to eq("hamiljo03")
+        end
       end
+
+      describe "#slugging_percentage" do
+        options = { :team_id => "OAK", :year_id => "2007"}
+
+        it "should return most improved batting average" do
+          slugging_percentage = @batting_stats.slugging_percentage(@batters, options)
+          expect(slugging_percentage).to eq(40.70288685673301)
+        end
+      end
+
+      describe "#triple_crown_winner for 2011 for AL" do
+        options = {:year_id => "2011", :league => "AL", :limit => 400}
+
+        it "should retun 'NO WINNER' if no player is found" do
+          triple_crown_winner = @batting_stats.triple_crown_winner(@batters, options)
+          expect(triple_crown_winner).to eq("Bobby Abreu")
+        end
+      end
+
+      describe "#triple_crown_winner for 2012 for AL" do
+        options = {:year_id => "2012", :league => "AL", :limit => 400}
+
+        it "should retun 'NO WINNER' if no player is found" do
+          triple_crown_winner = @batting_stats.triple_crown_winner(@batters, options)
+          expect(triple_crown_winner).to eq("Dustin Ackley")
+        end
+      end
+
+      describe "#triple_crown_winner for 2011 for NL" do
+        options = {:year_id => "2011", :league => "NL", :limit => 400}
+
+        it "should retun 'NO WINNER' if no player is found" do
+          triple_crown_winner = @batting_stats.triple_crown_winner(@batters, options)
+          expect(triple_crown_winner).to eq("Clint Barmes")
+        end
+      end
+
+      describe "#triple_crown_winner for 2012 for NL" do
+        options = {:year_id => "2012", :league => "NL", :limit => 400}
+
+        it "should retun 'NO WINNER' if no player is found" do
+          triple_crown_winner = @batting_stats.triple_crown_winner(@batters, options)
+          expect(triple_crown_winner).to eq("Yonder Alonso")
+        end
+      end
+
     end
-
-    describe "#slugging_percentage" do
-      before(:all) do
-        file_path = File.expand_path('data/Master-small.csv')
-        data_loader = DataLoader.new
-        @roster = data_loader.load_player_roster(file_path)
-        batting_file_path = File.expand_path('data/Batting-07-12.csv')
-        data_loader = DataLoader.new
-        @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
-        @options = { :team_id => "OAK", :year_id => "2007"}
-      end
-
-      it "should return most improved batting average" do
-        batting_stats = Statistics.new
-        slugging_percentage = batting_stats.slugging_percentage(@batters, @options)
-        puts "slugging_percentage => #{slugging_percentage}"
-        expect(slugging_percentage).to eq(40.70288685673301)
-      end
-    end
-
   end
 
 end

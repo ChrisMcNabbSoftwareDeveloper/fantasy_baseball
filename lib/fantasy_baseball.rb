@@ -88,14 +88,14 @@ module FantasyBaseball
     puts "--------------------------------------------------"
   end
 
-  def self.triple_crown_winner(*args)
+  def self.triple_crown_winner(batters, args)
     raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-    #    triple_crown_winner = Statistics.triple_crown_winner(args)
+    triple_crown_winner = Statistics.triple_crown_winner(batters, args)
 
-    #puts "Year: #{args[:year]}"                 # "2011:"
-    #puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
-    #puts "Player: #{triple_crown_winner}"
+    puts "Year: #{args[:year]}"                 # "2011:"
+    puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
+    puts "Player: #{triple_crown_winner}"
     puts "*" * 80
 
   end

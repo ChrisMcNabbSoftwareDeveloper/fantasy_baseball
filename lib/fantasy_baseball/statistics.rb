@@ -109,5 +109,50 @@ module FantasyBaseball
       @slugging_percentage = (((@hits - @doubles - @triples - @home_runs) + (2.0 * @doubles) + (3.0 * @triples) + (4.0 * @home_runs) ) / @at_bats ) * 100.0
     end
 
+    def triple_crown_winner(batters, args={})
+      @year_id = args[:year_id]
+      @league = args[:league]
+      @limit_at_bats = args[:limit]
+
+      @highest_batting_average = {}   # => {"aardsds01" => {:player_full_name => "Hank Aaron", :batting_average => 0.354}}
+      @most_home_runs = {}            # => {"aardsdz01" => {:player_full_name => "Hank Aaron", :home_runs => 32}}
+      @most_rbis = {}                 # => {"harrnds01" => {:player_full_name => "Hank Aaron", :runs_batted_in => 54}}
+      #      @triple_crown_winner = {}       # => {:player_id => "aardxxe03", :batting_average => 0.356, :home_runs => 21, :runs_batted_in => 54}
+      @triple_crown_winner =  ""
+
+      batters.each do |key, value|
+        candidate = value.detect { |data| next unless data.year_id == @year_id && data.league == @league; if data.at_bats > @limit_at_bats; data; end }
+
+        if !candidate.nil?
+          if @highest_batting_average.empty?
+            @highest_batting_average[candidate.player_id] = {:player_full_name => candidate.player_full_name, :batting_average => candidate.batting_average}
+          end
+          if @most_home_runs.empty?
+            @most_home_runs[candidate.player_id] = {:player_full_name => candidate.player_full_name, :home_runs => candidate.home_runs}
+          end
+          if @most_rbis.empty?
+            @most_rbis[candidate.player_id] = {:player_full_name => candidate.player_full_name, :runs_batted_in => candidate.runs_batted_in}
+          end
+          if (candidate.batting_average <=> @highest_batting_average[candidate.player_id]) == 1
+            @highest_batting_average[candidate.player_id] = {:player_full_name => candidate.player_full_name, :batting_average => candidate.batting_average}
+          end
+          if (candidate.home_runs <=> @most_home_runs[candidate.player_id]) == 1
+            @most_home_runs[candidate.player_id] = {:player_full_name => candidate.player_full_name, :home_runs => candidate.home_runs}
+          end
+          if (candidate.runs_batted_in <=> @most_rbis[candidate.player_id]) == 1
+            @most_rbis[candidate.player_id] = {:player_full_name => candidate.player_full_name, :runs_batted_in => candidate.runs_batted_in}
+          end
+        end
+      end
+      if !@highest_batting_average.empty? && !@most_home_runs.empty? && !@most_rbis.empty?
+        if @highest_batting_average.keys.first == @most_home_runs.keys.first && @highest_batting_average.keys.first == @most_rbis.keys.first
+          @triple_crown_winner = @highest_batting_average[@highest_batting_average.keys.first][:player_full_name]
+        end
+      else
+        @triple_crown_winner = "NO WINNER"
+      end
+      @triple_crown_winner
+    end
+
   end
 end
