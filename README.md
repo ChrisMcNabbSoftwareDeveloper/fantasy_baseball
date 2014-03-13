@@ -34,7 +34,12 @@
      $ git clone git@github.com:chrismcnabbsoftwaredeveloper/fantasy_baseball.git
 >
 
-> Step 2: Setup logging* - add this entry to /etc/syslog.conf
+> Step 2: Bundle
+>
+     $ bundle
+>
+
+> Step 3: Setup logging* - add this entry to /etc/syslog.conf
 >
      local5.* /var/log/fantasy_baseball.log
 >
@@ -243,3 +248,9 @@
      'simplecov'
 >
      'rspec'
+>
+     'pry'
+>
+     'awesome_print'
+
+
