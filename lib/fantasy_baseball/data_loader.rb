@@ -48,18 +48,8 @@ module FantasyBaseball
         CSV.foreach(file_path, csv_options) do |row|
           @line_count += 1
           batter_data = Statistics.initialize_batting_data row
-
-#puts '-' * 120
-#puts "batter_data => #{batter_data.inspect}"
-#puts '-' * 120
-
           next unless batting_data_clean?(batter_data)
           find_or_create_batter(batter_data, roster)
-
-#if @line_count == 10
-#  puts "@batters_by_id => #{@batters_by_id.inspect}"
-#  exit
-#end
         end
         log_successful_import(file_path, @line_count)
       rescue CSV::MalformedCSVError => error
@@ -72,7 +62,7 @@ module FantasyBaseball
       @batters_by_id
     end
 
-    #    private
+    private
 
     def build_options_hash(options)
       raise ArgumentError 'options cannot be nil' if options.nil?
