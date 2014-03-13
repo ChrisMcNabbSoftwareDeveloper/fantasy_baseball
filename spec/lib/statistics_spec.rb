@@ -50,60 +50,6 @@ module FantasyBaseball
       end
     end
 
-pending    describe "#batting_average_improvement" do
-      let(:player_id) {'abreubo01'}
-      let(:base_year) { {'playerID' => player_id, 'yearID' => 2009,
-                         'teamID' => 'LAA', 'G' => 152, 'AB' => 563, 'R' => 96,
-                         'H' => 165, '2B' => 29, '3B' => 3, 'HR' => 15, 'RBI' => 103,
-                         'SB' => 30, 'CS' => 8 } }
-      let(:compare_year) { {'playerID' => player_id, 'yearID' => 2010,
-                            'teamID' => 'LAA', 'G' => 154, 'AB' => 563, 'R' => 88,
-                            'H' => 165, '2B' => 41, '3B' => 1, 'HR' => 20, 'RBI' => 78,
-                            'SB' => 24, 'CS' => 10 } }
-
-      it "should return '0' if batting average stayed the same between the two years" do
-        batting_stats = Statistics.new
-        batting_average_improvement = batting_stats.batting_average_improvement(base_year, compare_year)
-        expect(batting_average_improvement).to eq(0)
-      end
-    end
-
-pending    describe "#batting_average_improvement" do
-      let(:player_id) {'abreubo01'}
-      let(:base_year) { {'playerID' => player_id, 'yearID' => 2009,
-                         'teamID' => 'LAA', 'G' => 152, 'AB' => 563, 'R' => 96,
-                         'H' => 165, '2B' => 29, '3B' => 3, 'HR' => 15, 'RBI' => 103,
-                         'SB' => 30, 'CS' => 8 } }
-      let(:compare_year) { {'playerID' => player_id, 'yearID' => 2010,
-                            'teamID' => 'LAA', 'G' => 154, 'AB' => 573, 'R' => 88,
-                            'H' => 195, '2B' => 41, '3B' => 1, 'HR' => 20, 'RBI' => 78,
-                            'SB' => 24, 'CS' => 10 } }
-
-      it "should return the improvement value if batting average improved over the two years" do
-        batting_stats = Statistics.new
-        batting_average_improvement = batting_stats.batting_average_improvement(base_year, compare_year)
-        expect(batting_average_improvement).to eq(0.3403141361256545)
-      end
-    end
-
-pending    describe "#batting_average_improvement" do
-      let(:player_id) {'abreubo01'}
-      let(:base_year) { {'playerID' => player_id, 'yearID' => 2009,
-                         'teamID' => 'LAA', 'G' => 152, 'AB' => 573, 'R' => 96,
-                         'H' => 195, '2B' => 29, '3B' => 3, 'HR' => 15, 'RBI' => 103,
-                         'SB' => 30, 'CS' => 8 } }
-      let(:compare_year) { {'playerID' => player_id, 'yearID' => 2010,
-                            'teamID' => 'LAA', 'G' => 154, 'AB' => 553, 'R' => 88,
-                            'H' => 135, '2B' => 41, '3B' => 1, 'HR' => 20, 'RBI' => 78,
-                            'SB' => 24, 'CS' => 10 } }
-
-      it "should return '-1' if batting average did NOT improve over the two years" do
-        batting_stats = Statistics.new
-        batting_average_improvement = batting_stats.batting_average_improvement(base_year, compare_year)
-        expect(batting_average_improvement).to eq(-1)
-      end
-    end
-
     describe "#most_improved_batting_average" do
       before(:all) do
         file_path = File.expand_path('data/Master-small.csv')
@@ -120,6 +66,25 @@ pending    describe "#batting_average_improvement" do
         most_improved = batting_stats.most_improved_batting_average(@batters, @options)
         puts "most_improved => #{most_improved}"
         expect(most_improved[:player_id]).to eq("hamiljo03")
+      end
+    end
+
+    describe "#slugging_percentage" do
+      before(:all) do
+        file_path = File.expand_path('data/Master-small.csv')
+        data_loader = DataLoader.new
+        @roster = data_loader.load_player_roster(file_path)
+        batting_file_path = File.expand_path('data/Batting-07-12.csv')
+        data_loader = DataLoader.new
+        @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
+        @options = { :team_id => "OAK", :year_id => 2007}
+      end
+
+      it "should return most improved batting average" do
+        batting_stats = Statistics.new
+        slugging_percentage = batting_stats.slugging_percentage(@batters, @options)
+        puts "slugging_percentage => #{slugging_percentage}"
+        expect(slugging_percentage).to eq(42)
       end
     end
 

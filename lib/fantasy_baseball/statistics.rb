@@ -4,9 +4,11 @@ module FantasyBaseball
     attr_accessor :player_id, :year_id, :league, :team_id, :games, :at_bats, :runs, :hits,
       :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases,
       :caught_stealing, :batting_average, :player_birth_year, :player_first_name, :player_last_name,
-      :player_full_name
+      :player_full_name, :slugging_percentage
 
     def initialize
+      @hits = hits
+      @at_bats = at_bats
     end
 
     def self.initialize_roster_data(row)
@@ -39,20 +41,6 @@ module FantasyBaseball
       data
     end
 
-    #    def batting_average_improvement(base_year, compare_year)
-    #      base_year_batting_average = annual_batting_average(base_year)
-    #      compare_year_batting_average = annual_batting_average(compare_year)
-    #      delta = base_year_batting_average <=> compare_year_batting_average
-    #      case delta
-    #      when 0
-    #        0 #same - no change - no improvement
-    #      when 1
-    #        -1 # <= NO, there was no improvement
-    #      when -1
-    #        compare_year_batting_average # <= YES there was improvement
-    #      end
-    #    end
-
     def most_improved_batting_average(batters, args={})
       raise ArgumentError.new 'args cannot be nil' if args.nil?
 
@@ -68,40 +56,13 @@ module FantasyBaseball
         data_by_year = value
         player_full_name = value[0].player_full_name
 
-        puts '-' * 120
-        puts "player_id(key) => #{player_id}"
-        puts '-' * 120
-        puts '-' * 120
-        puts "data_by_year(value) => #{data_by_year.inspect}"
-        puts '-' * 120
-
         base_year_data = data_by_year.detect { |data| next unless data.year_id == @base_year; if data.at_bats > @limit_at_bats; data; end }
         compare_year_data = data_by_year.detect { |data| next unless data.year_id == @compare_year; if data.at_bats > @limit_at_bats; data; end }
-
-puts '-' * 120
-puts "base_year_data => #{base_year_data.inspect}"
-puts '-' * 120
-
-puts '-' * 120
-puts "compare_year_data => #{compare_year_data.inspect}"
-puts '-' * 120
 
         batting_average_base_year = base_year_data.batting_average if !base_year_data.nil?
         batting_average_compare_year = compare_year_data.batting_average if !compare_year_data.nil?
 
-puts '-' * 120
-puts "batting_average_base_year => #{batting_average_base_year.inspect}"
-puts '-' * 120
-
-puts '-' * 120
-puts "batting_average_compare_year => #{batting_average_compare_year.inspect}"
-puts '-' * 120
-
         delta = batting_average_base_year <=> batting_average_compare_year
-
-puts '-' * 120
-puts "delta => #{delta.inspect}"
-puts '-' * 120
 
         case delta
         when 0
@@ -112,19 +73,7 @@ puts '-' * 120
           @delta_flag = (batting_average_compare_year * 1.0  - batting_average_base_year)  # <= YES there was improvement
         end
 
-puts '-' * 120
-puts "@delta_flag => #{@delta_flag.inspect}"
-puts '-' * 120
-puts '-' * 120
-puts '>> BEFORE'
-puts "@most_improved => #{@most_improved.inspect}"
-puts '-' * 120
-
         if @delta_flag > 0.0 && @delta_flag < 1.0
-
-puts '-' * 120
-puts "@most_improved[:delta] => #{@most_improved[:delta].inspect}" if @most_improved[:delta]
-puts '-' * 120
           if @most_improved.empty?
             @most_improved[:player_id] = player_id
             @most_improved[:player_full_name] = player_full_name
@@ -134,21 +83,37 @@ puts '-' * 120
             @most_improved[:player_id] = player_id
             @most_improved[:player_full_name] = player_full_name
             @most_improved[:delta] = @delta_flag
-
-puts '-' * 120
-puts '>>>>>>>>> @most_improved JUST UPDATED'
-puts "@most_improved => #{@most_improved.inspect}"
-puts '-' * 120
-
           end
         end
-
-puts '-' * 120
-puts "@most_improved => #{@most_improved.inspect}"
-puts '-' * 120
-
       end
       @most_improved
+    end
+
+    def slugging_percentage(batters, args={})
+      @team_id = args[:team_id]
+      @year_id = args[:year_id]
+      @hits = @at_bats = @doubles = @triples = @home_runs = 0
+
+      batters.each do |key, value|
+        slugging_data = value.detect { |data| next unless data.year_id == @year_id && data.team_id == @team_id; data; }
+
+puts '-' * 120
+puts "slugging_data => #{slugging_data.inspect}"
+puts '-' * 120
+
+puts '-' * 120
+puts "slugging_data.hits => #{slugging_data.hits.inspect}" if slugging_data
+puts '-' * 120
+
+        if slugging_data
+          @hits += slugging_data.hits
+          @at_bats += slugging_data.at_bats
+          @doubles += slugging_data.doubles
+          @triples += slugging_data.triples
+          @home_runs += slugging_data.home_runs
+        end
+      end
+      @slugging_percentage = ((@hits - @doubles - @triples - @home_runs) + (2.0 * @doubles) + (3.0 * @triples) + (4.0 * @home_runs) ) / @at_bats
     end
 
   end

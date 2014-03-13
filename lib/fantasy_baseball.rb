@@ -19,7 +19,7 @@ module FantasyBaseball
 
     most_improved_batting_average(batters, {:base_year => "2009", :compare_year => "2010", :limit_at_bats => 200} )
 
-    slugging_percentage(batters, {:team => "OAK", :year => "2007"} )
+    slugging_percentage(batters, {:team_id => "OAK", :year_id => "2007"} )
 
     triple_crown_header
     triple_crown_winner(batters, {:year => "2011", :league => "AL"} )
@@ -60,10 +60,6 @@ module FantasyBaseball
   def self.most_improved_batting_average(*args)
     raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-    puts '-' * 120
-    puts "args => #{args.inspect}"
-    puts '-' * 120
-
     batting_stats = Statistics.new
     most_improved_player = batting_stats.most_improved_batting_average(*args)
 
@@ -71,17 +67,17 @@ module FantasyBaseball
     puts "Most Improved Batting Average"
     puts "-----------------------------"
     puts "(players must have at least #{args[1][:limit_at_bats].to_s} at-bats.)"
-#    puts "args => #{args.inspect}"
     puts "   #{most_improved_player[:player_full_name]} (#{most_improved_player[:player_id]})"
   end
 
   def self.slugging_percentage(*args)
     raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-    #    slugging_percentage = Statistics.slugging_percentage(args[:batters], args[:year], args[:team_id])
+    batting_stats = Statistics.new
+    slugging_percentage = batting_stats.slugging_percentage(args[0][:batters], args[1][:year], args[1][:team_id])
 
     puts "*" * 80
-    #puts "#{args[:team_id]} Slugging Percentage in #{args[:year]}"
+    puts "#{args[1][:team_id]} Slugging Percentage in #{args[1][:year]}"
     puts "---------------------------------------"
     #puts "   #{slugging_percentage}% "
   end
