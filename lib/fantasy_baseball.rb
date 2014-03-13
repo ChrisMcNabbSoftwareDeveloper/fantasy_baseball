@@ -1,4 +1,3 @@
-require_relative 'fantasy_baseball/batter'
 require_relative '../lib/fantasy_baseball/data_loader'
 require_relative '../config/configuration'
 
