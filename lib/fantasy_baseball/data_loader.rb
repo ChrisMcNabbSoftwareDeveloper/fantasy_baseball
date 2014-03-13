@@ -12,11 +12,9 @@ module FantasyBaseball
     BATTING_PRE_PROCESSED_FILE_PATH = File.expand_path('data/Batting-pre-processed.csv')
     PLAYER_ROSTER_PRE_PROCESSED_FILE_PATH = File.expand_path('data/Master-pre-processed.csv')
 
-    def initialize
-    end
-
     def load_player_roster(file_path)
-      return ArgumentError if file_path.empty?
+      raise ArgumentError.new 'File Path required' if file_path.empty?
+
       @file_path = clean_input_file(file_path, PLAYER_ROSTER_PRE_PROCESSED_FILE_PATH)
       @csv_options = build_options_hash(Configuration.for 'csv_options')
       @roster = []
@@ -38,7 +36,8 @@ module FantasyBaseball
     end
 
     def load_batting_data(file_path, roster)
-      return ArgumentError if file_path.empty?
+      raise ArgumentError.new 'File Path and roster required' if (file_path.empty? || roster.empty?)
+
       file_path = clean_input_file(file_path, BATTING_PRE_PROCESSED_FILE_PATH)
       csv_options = build_options_hash(Configuration.for 'csv_options')
       @batters = []
@@ -65,7 +64,6 @@ module FantasyBaseball
     private
 
     def build_options_hash(options)
-      raise ArgumentError 'options cannot be nil' if options.nil?
        hash = {}
        hash[:headers] = options.headers
        hash[:col_sep] = options.col_sep

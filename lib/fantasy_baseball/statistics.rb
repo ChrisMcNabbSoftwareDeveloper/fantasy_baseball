@@ -1,4 +1,3 @@
-require 'pry'
 module FantasyBaseball
 
   class Statistics 
@@ -43,7 +42,7 @@ module FantasyBaseball
     end
 
     def most_improved_batting_average(batters, args={})
-      raise ArgumentError.new 'args cannot be nil' if args.nil?
+      raise ArgumentError.new 'args cannot be nil' if (batters.nil? || args.nil?)
 
       @base_year = args[:base_year]
       @compare_year = args[:compare_year]
@@ -91,6 +90,8 @@ module FantasyBaseball
     end
 
     def slugging_percentage(batters, args={})
+      raise ArgumentError.new 'args cannot be nil' if (batters.nil? || args.nil?)
+
       @team_id = args[:team_id]
       @year_id = args[:year_id]
       @hits = @at_bats = @doubles = @triples = @home_runs = 0
@@ -110,6 +111,8 @@ module FantasyBaseball
     end
 
     def triple_crown_winner(batters, args={})
+      raise ArgumentError.new 'args cannot be nil' if (batters.nil? || args.nil?)
+
       @year_id = args[:year_id]
       @league = args[:league]
       @limit_at_bats = args[:limit]
