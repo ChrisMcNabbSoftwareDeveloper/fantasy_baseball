@@ -70,16 +70,16 @@ module FantasyBaseball
     puts "   #{most_improved_player[:player_full_name]} (#{most_improved_player[:player_id]})"
   end
 
-  def self.slugging_percentage(*args)
+  def self.slugging_percentage(batters, args)
     raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
     batting_stats = Statistics.new
-    slugging_percentage = batting_stats.slugging_percentage(args[0][:batters], args[1][:year], args[1][:team_id])
+    slugging_percentage = batting_stats.slugging_percentage(batters, args)
 
     puts "*" * 80
-    puts "#{args[1][:team_id]} Slugging Percentage in #{args[1][:year]}"
+    puts "#{args[:team_id]} Slugging Percentage in #{args[:year_id]}"
     puts "---------------------------------------"
-    #puts "   #{slugging_percentage}% "
+    puts "   #{Float("%.3g" % slugging_percentage)}% "
   end
 
   def self.triple_crown_header

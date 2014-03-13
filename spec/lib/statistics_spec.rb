@@ -5,7 +5,7 @@ module FantasyBaseball
 
   describe Statistics do
 
-    describe "statistics" do
+    describe "statistics" do # sanity check
       it "should be a kind of statistics" do
         batting_statistics = Statistics.new
         expect(batting_statistics).to be_a_kind_of(Statistics)
