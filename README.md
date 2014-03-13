@@ -84,45 +84,45 @@
 >
 > Here's the setting for the <strong><em>Player Roster CSV</em></strong> file:
 >
-     $ Configuration.for('player_roster') {
-         input_file_name 'data/Master-small.csv'
-       }
+     Configuration.for('player_roster') {
+       input_file_name 'data/Master-small.csv'
+     }
 
 >
 >
-> ...the setting for the Batting Data CSV file:
+> ...the setting for the <strong><em>Batting Data CSV</em></strong> file:
 >
 
-     $ Configuration.for('batting_input_file') {
-         input_file_name 'data/Batting-07-12.csv'
-       }
+     Configuration.for('batting_input_file') {
+       input_file_name 'data/Batting-07-12.csv'
+     }
 
 >
 >
-> ... the setting for the Pitching Data CSV file: (future)
+> ... the setting for the <strong><em>Pitching Data CSV</em></strong> file: (future)
 >
-     $ Configuration.for('pitching_input_file') {
-         input_file_name 'data/Pitching-07-12.csv'
-       }
+     Configuration.for('pitching_input_file') {
+       input_file_name 'data/Pitching-07-12.csv'
+     }
 >
 >
 > ... the setting for the "csv_options" hash for CSV class used for data import (details: http://apidock.com/ruby/CSV):
 >
 
-     $ Configuration.for('csv_options') {
-         col_sep ','
-         row_sep :auto
-         quote_char '"'
-         field_size_limit nil
-         converters nil
-         unconverted_fields nil
-         headers true
-         return_headers false
-         write_headers false
-         skip_blanks false
-         force_quotes false
-         encoding 'UTF-8'
-       }
+     Configuration.for('csv_options') {
+       col_sep ','
+       row_sep :auto
+       quote_char '"'
+       field_size_limit nil
+       converters nil
+       unconverted_fields nil
+       headers true
+       return_headers false
+       write_headers false
+       skip_blanks false
+       force_quotes false
+       encoding 'UTF-8'
+     }
 
 >
 
