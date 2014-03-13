@@ -96,8 +96,8 @@ module FantasyBaseball
     batting_stats = Statistics.new
     triple_crown_winner = batting_stats.triple_crown_winner(batters, args)
 
-    puts "Year: #{args[:year]}"                 # "2011:"
-    puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "
+    puts "Year: #{args[:year_id]}"
+    puts "League: #{args[:league]}"
     puts "Player: #{triple_crown_winner}"
     puts "*" * 80
 
