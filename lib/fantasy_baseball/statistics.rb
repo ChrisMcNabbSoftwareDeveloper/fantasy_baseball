@@ -1,3 +1,4 @@
+require 'pry'
 module FantasyBaseball
 
   class Statistics 
@@ -97,14 +98,6 @@ module FantasyBaseball
       batters.each do |key, value|
         slugging_data = value.detect { |data| next unless data.year_id == @year_id && data.team_id == @team_id; data; }
 
-puts '-' * 120
-puts "slugging_data => #{slugging_data.inspect}"
-puts '-' * 120
-
-puts '-' * 120
-puts "slugging_data.hits => #{slugging_data.hits.inspect}" if slugging_data
-puts '-' * 120
-
         if slugging_data
           @hits += slugging_data.hits
           @at_bats += slugging_data.at_bats
@@ -113,7 +106,7 @@ puts '-' * 120
           @home_runs += slugging_data.home_runs
         end
       end
-      @slugging_percentage = ((@hits - @doubles - @triples - @home_runs) + (2.0 * @doubles) + (3.0 * @triples) + (4.0 * @home_runs) ) / @at_bats
+      @slugging_percentage = (((@hits - @doubles - @triples - @home_runs) + (2.0 * @doubles) + (3.0 * @triples) + (4.0 * @home_runs) ) / @at_bats ) * 100.0
     end
 
   end

@@ -77,14 +77,14 @@ module FantasyBaseball
         batting_file_path = File.expand_path('data/Batting-07-12.csv')
         data_loader = DataLoader.new
         @batters = data_loader.load_batting_data(File.expand_path(batting_file_path), @roster)
-        @options = { :team_id => "OAK", :year_id => 2007}
+        @options = { :team_id => "OAK", :year_id => "2007"}
       end
 
       it "should return most improved batting average" do
         batting_stats = Statistics.new
         slugging_percentage = batting_stats.slugging_percentage(@batters, @options)
         puts "slugging_percentage => #{slugging_percentage}"
-        expect(slugging_percentage).to eq(42)
+        expect(slugging_percentage).to eq(40.70288685673301)
       end
     end
 

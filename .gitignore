@@ -1,4 +1,7 @@
-log/*
+.gitignore
 .rspec-local
 Gemfile.lock
 .rvmrc
+coverage
+log/*
+.*

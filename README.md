@@ -171,4 +171,12 @@
 > ...in the project root directory.  It will run the suite of all the tests.
 > NOTE: There is a place in the middle during the runnign of all the tests, where the screen appears to "hang" for a minute or two.  This is the test where it is reading in over 18,000 records from the input CSV data file, so it's not "hung"...just merely reading in a lot of data.
 
-
+# GEMS USED
+>
+> I've used the following gems in this project:
+>
+     'configuration'
+>
+     'simplecov'
+>
+     'rspec'
