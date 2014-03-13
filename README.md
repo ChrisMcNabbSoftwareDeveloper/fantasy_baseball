@@ -149,16 +149,26 @@
      ***************************************************************************
      Oakland A's Slugging Percentage in 2007
      ---------------------------------------
-        42%
+        40.7%
      ***************************************************************************
      Triple Crown Winner for AL and NL in 2011 and 2012
      --------------------------------------------------
-     2011:
-     AL:   Johnny Abrego (abregojo01)
-     NL:   Ed Abbaticchio (abbated01)
-     2012:
-     AL:   Francis Ambercrombie (abercda01)
-     NL:   Toots Shultz (shultto01)
+     Year: 2011
+     League: AL
+     Player: Bobby Abreu
+     ------------------------
+     Year: 2011
+     League: NL
+     Player: Clint Barmes
+     ------------------------
+     Year: 2012
+     League: AL
+     Player: Dustin Ackley
+     ------------------------
+     Year: 2012
+     League: NL
+     Player: Yonder Alonso
+     ------------------------
      ***************************************************************************
 >
 

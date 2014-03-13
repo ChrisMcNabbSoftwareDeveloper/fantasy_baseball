@@ -2,6 +2,8 @@ require_relative 'fantasy_baseball/batter'
 require_relative '../lib/fantasy_baseball/data_loader'
 require_relative '../config/configuration'
 
+require 'pry'
+
 module FantasyBaseball
 
   roster_config = Configuration.for 'player_roster'
@@ -22,10 +24,10 @@ module FantasyBaseball
     slugging_percentage(batters, {:team_id => "OAK", :year_id => "2007"} )
 
     triple_crown_header
-    triple_crown_winner(batters, {:year => "2011", :league => "AL"} )
-    triple_crown_winner(batters, {:year => "2011", :league => "NL"} )
-    triple_crown_winner(batters, {:year => "2012", :league => "AL"} )
-    triple_crown_winner(batters, {:year => "2012", :league => "NL"} )
+    triple_crown_winner(batters, {:year_id => "2011", :league => "AL", :limit => 400} )
+    triple_crown_winner(batters, {:year_id => "2011", :league => "NL", :limit => 400} )
+    triple_crown_winner(batters, {:year_id => "2012", :league => "AL", :limit => 400} )
+    triple_crown_winner(batters, {:year_id => "2012", :league => "NL", :limit => 400} )
   end
 
   def self.load_player_roster
@@ -91,7 +93,8 @@ module FantasyBaseball
   def self.triple_crown_winner(batters, args)
     raise ArgumentError, "args is nil. Please provide valid argument.", caller if args.nil?
 
-    triple_crown_winner = Statistics.triple_crown_winner(batters, args)
+    batting_stats = Statistics.new
+    triple_crown_winner = batting_stats.triple_crown_winner(batters, args)
 
     puts "Year: #{args[:year]}"                 # "2011:"
     puts "League: #{args[:league]}"             # "AL:   Johnny Abrego (abregojo01) "

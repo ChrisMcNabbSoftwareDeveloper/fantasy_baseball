@@ -5,7 +5,7 @@ module FantasyBaseball
     attr_accessor :player_id, :year_id, :league, :team_id, :games, :at_bats, :runs, :hits,
       :doubles, :triples, :home_runs, :runs_batted_in, :stolen_bases,
       :caught_stealing, :batting_average, :player_birth_year, :player_first_name, :player_last_name,
-      :player_full_name, :slugging_percentage
+      :player_full_name, :slugging_percentage, :triple_crown_winner
 
     def initialize
       @hits = hits
