@@ -3,7 +3,6 @@ require 'syslog'
 require 'configuration'
 require_relative '../../lib/fantasy_baseball/statistics'
 require_relative 'roster_entry'
-require_relative 'batter_data_by_year'
 
 module FantasyBaseball
 
@@ -98,7 +97,6 @@ module FantasyBaseball
       if @batters_by_id[data.player_id]
         @batters_by_id[data.player_id] << data
       else
-        # =>             (key)         (value)
         @batters_by_id[data.player_id] = [data]
       end
     end
