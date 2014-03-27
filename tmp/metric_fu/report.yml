@@ -1,0 +1,2635 @@
+---
+:cane:
+  :total_violations: 85
+  :violations:
+    :abc_complexity:
+    - :file: lib/fantasy_baseball/statistics.rb
+      :method: FantasyBaseball::Statistics#triple_crown_winner
+      :complexity: '55'
+    - :file: lib/fantasy_baseball/statistics.rb
+      :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :complexity: '32'
+    - :file: lib/fantasy_baseball/data_loader.rb
+      :method: FantasyBaseball::DataLoader#batting_data_clean?
+      :complexity: '29'
+    - :file: lib/fantasy_baseball/statistics.rb
+      :method: FantasyBaseball::Statistics.initialize_batting_data
+      :complexity: '21'
+    - :file: lib/fantasy_baseball/statistics.rb
+      :method: FantasyBaseball::Statistics#slugging_percentage
+      :complexity: '20'
+    - :file: lib/fantasy_baseball/data_loader.rb
+      :method: FantasyBaseball::DataLoader#build_options_hash
+      :complexity: '20'
+    :line_style:
+    - :line: lib/fantasy_baseball/data_loader.rb:11
+      :description: Line is >80 characters (88)
+    - :line: lib/fantasy_baseball/data_loader.rb:12
+      :description: Line is >80 characters (93)
+    - :line: lib/fantasy_baseball/data_loader.rb:17
+      :description: Line is >80 characters (85)
+    - :line: lib/fantasy_baseball/data_loader.rb:38
+      :description: Line is >80 characters (100)
+    - :line: lib/fantasy_baseball/data_loader.rb:118
+      :description: Line is >80 characters (101)
+    - :line: lib/fantasy_baseball/data_loader.rb:119
+      :description: Line is >80 characters (96)
+    - :line: lib/fantasy_baseball/data_loader.rb:163
+      :description: Line is >80 characters (116)
+    - :line: lib/fantasy_baseball/data_loader.rb:169
+      :description: Line is >80 characters (123)
+    - :line: lib/fantasy_baseball/player.rb:7
+      :description: Line is >80 characters (91)
+    - :line: lib/fantasy_baseball/roster_entry.rb:5
+      :description: Line is >80 characters (106)
+    - :line: lib/fantasy_baseball/roster_entry.rb:14
+      :description: Line is >80 characters (93)
+    - :line: lib/fantasy_baseball/statistics.rb:3
+      :description: Line contains trailing whitespace
+    - :line: lib/fantasy_baseball/statistics.rb:4
+      :description: Line is >80 characters (90)
+    - :line: lib/fantasy_baseball/statistics.rb:6
+      :description: Line is >80 characters (100)
+    - :line: lib/fantasy_baseball/statistics.rb:45
+      :description: Line is >80 characters (81)
+    - :line: lib/fantasy_baseball/statistics.rb:59
+      :description: Line is >80 characters (139)
+    - :line: lib/fantasy_baseball/statistics.rb:60
+      :description: Line is >80 characters (145)
+    - :line: lib/fantasy_baseball/statistics.rb:62
+      :description: Line is >80 characters (90)
+    - :line: lib/fantasy_baseball/statistics.rb:63
+      :description: Line is >80 characters (99)
+    - :line: lib/fantasy_baseball/statistics.rb:73
+      :description: Line is >80 characters (121)
+    - :line: lib/fantasy_baseball/statistics.rb:82
+      :description: Line is >80 characters (83)
+    - :line: lib/fantasy_baseball/statistics.rb:93
+      :description: Line is >80 characters (81)
+    - :line: lib/fantasy_baseball/statistics.rb:100
+      :description: Line is >80 characters (119)
+    - :line: lib/fantasy_baseball/statistics.rb:110
+      :description: Line is >80 characters (155)
+    - :line: lib/fantasy_baseball/statistics.rb:114
+      :description: Line is >80 characters (81)
+    - :line: lib/fantasy_baseball/statistics.rb:120
+      :description: Line is >80 characters (122)
+    - :line: lib/fantasy_baseball/statistics.rb:121
+      :description: Line is >80 characters (113)
+    - :line: lib/fantasy_baseball/statistics.rb:122
+      :description: Line is >80 characters (118)
+    - :line: lib/fantasy_baseball/statistics.rb:123
+      :description: Line is >80 characters (145)
+    - :line: lib/fantasy_baseball/statistics.rb:127
+      :description: Line is >80 characters (151)
+    - :line: lib/fantasy_baseball/statistics.rb:131
+      :description: Line is >80 characters (156)
+    - :line: lib/fantasy_baseball/statistics.rb:134
+      :description: Line is >80 characters (135)
+    - :line: lib/fantasy_baseball/statistics.rb:137
+      :description: Line is >80 characters (140)
+    - :line: lib/fantasy_baseball/statistics.rb:139
+      :description: Line is >80 characters (95)
+    - :line: lib/fantasy_baseball/statistics.rb:140
+      :description: Line is >80 characters (156)
+    - :line: lib/fantasy_baseball/statistics.rb:143
+      :description: Line is >80 characters (135)
+    - :line: lib/fantasy_baseball/statistics.rb:146
+      :description: Line is >80 characters (140)
+    - :line: lib/fantasy_baseball/statistics.rb:150
+      :description: Line is >80 characters (90)
+    - :line: lib/fantasy_baseball/statistics.rb:151
+      :description: Line is >80 characters (140)
+    - :line: lib/fantasy_baseball/statistics.rb:152
+      :description: Line is >80 characters (113)
+    - :line: lib/fantasy_baseball.rb:19
+      :description: Line is >80 characters (115)
+    - :line: lib/fantasy_baseball.rb:24
+      :description: Line is >80 characters (87)
+    - :line: lib/fantasy_baseball.rb:25
+      :description: Line is >80 characters (87)
+    - :line: lib/fantasy_baseball.rb:26
+      :description: Line is >80 characters (87)
+    - :line: lib/fantasy_baseball.rb:27
+      :description: Line is >80 characters (87)
+    - :line: lib/fantasy_baseball.rb:60
+      :description: Line is >80 characters (91)
+    - :line: lib/fantasy_baseball.rb:69
+      :description: Line is >80 characters (94)
+    - :line: lib/fantasy_baseball.rb:73
+      :description: Line is >80 characters (91)
+    - :line: lib/fantasy_baseball.rb:91
+      :description: Line is >80 characters (91)
+    - :line: spec/lib/data_loader_spec.rb:16
+      :description: Line is >80 characters (92)
+    - :line: spec/lib/data_loader_spec.rb:19
+      :description: Line is >80 characters (90)
+    - :line: spec/lib/data_loader_spec.rb:67
+      :description: Line is >80 characters (94)
+    - :line: spec/lib/player_spec.rb:7
+      :description: Line is >80 characters (114)
+    - :line: spec/lib/player_spec.rb:11
+      :description: Line is >80 characters (117)
+    - :line: spec/lib/player_spec.rb:15
+      :description: Line is >80 characters (116)
+    - :line: spec/lib/player_spec.rb:19
+      :description: Line is >80 characters (116)
+    - :line: spec/lib/player_spec.rb:23
+      :description: Line is >80 characters (120)
+    - :line: spec/lib/player_spec.rb:27
+      :description: Line is >80 characters (102)
+    - :line: spec/lib/player_spec.rb:29
+      :description: Line is >80 characters (110)
+    - :line: spec/lib/player_spec.rb:30
+      :description: Line is >80 characters (99)
+    - :line: spec/lib/roster_entry_spec.rb:8
+      :description: Line is >80 characters (118)
+    - :line: spec/lib/statistics_spec.rb:16
+      :description: Line is >80 characters (92)
+    - :line: spec/lib/statistics_spec.rb:20
+      :description: Line is >80 characters (90)
+    - :line: spec/lib/statistics_spec.rb:25
+      :description: Line is >80 characters (90)
+    - :line: spec/lib/statistics_spec.rb:28
+      :description: Line is >80 characters (91)
+    - :line: spec/lib/statistics_spec.rb:37
+      :description: Line is >80 characters (87)
+    - :line: spec/lib/statistics_spec.rb:46
+      :description: Line is >80 characters (87)
+    - :line: spec/lib/statistics_spec.rb:55
+      :description: Line is >80 characters (87)
+    - :line: spec/lib/statistics_spec.rb:64
+      :description: Line is >80 characters (87)
+    - :line: spec/lib/statistics_spec.rb:73
+      :description: Line is >80 characters (87)
+    - :line: spec/lib/statistics_spec.rb:89
+      :description: Line is >80 characters (115)
+    - :line: spec/lib/statistics_spec.rb:102
+      :description: Line is >80 characters (112)
+    - :line: spec/lib/statistics_spec.rb:103
+      :description: Line is >80 characters (101)
+    - :line: spec/spec_helper.rb:1
+      :description: Line is >80 characters (81)
+    :comment:
+    - :line: lib/fantasy_baseball/data_loader.rb:9
+      :class_name: DataLoader
+    - :line: lib/fantasy_baseball/player.rb:3
+      :class_name: Player
+    - :line: lib/fantasy_baseball/roster_entry.rb:3
+      :class_name: RosterEntry
+    - :line: lib/fantasy_baseball/statistics.rb:3
+      :class_name: Statistics
+    - :line: lib/fantasy_baseball.rb:4
+      :class_name: FantasyBaseball
+:churn:
+  :changes:
+  - :file_path: README.md
+    :times_changed: 35
+  - :file_path: lib/fantasy_baseball/data_loader.rb
+    :times_changed: 22
+  - :file_path: lib/fantasy_baseball.rb
+    :times_changed: 19
+  - :file_path: lib/fantasy_baseball/batter.rb
+    :times_changed: 16
+  - :file_path: spec/lib/batter_spec.rb
+    :times_changed: 14
+  - :file_path: spec/lib/data_loader_spec.rb
+    :times_changed: 14
+  - :file_path: lib/fantasy_baseball/statistics.rb
+    :times_changed: 14
+  - :file_path: spec/lib/statistics_spec.rb
+    :times_changed: 12
+  - :file_path: lib/fantasy_baseball/player.rb
+    :times_changed: 12
+  :class_churn: []
+  :method_churn: []
+  :changed_files:
+  - README.md
+  :changed_classes: []
+  :changed_methods: []
+:flay:
+  :total_score: '99'
+  :matches:
+  - :reason: 1) Similar code found in :if (mass = 63)
+    :matches:
+    - :name: lib/fantasy_baseball/statistics.rb
+      :line: '139'
+    - :name: lib/fantasy_baseball/statistics.rb
+      :line: '142'
+    - :name: lib/fantasy_baseball/statistics.rb
+      :line: '145'
+  - :reason: 2) Similar code found in :lasgn (mass = 36)
+    :matches:
+    - :name: lib/fantasy_baseball/statistics.rb
+      :line: '59'
+    - :name: lib/fantasy_baseball/statistics.rb
+      :line: '60'
+:flog:
+  :total: 634.6067052191991
+  :average: 15.109683457599978
+  :method_containers:
+  - :name: FantasyBaseball::Statistics
+    :path: lib/fantasy_baseball/statistics.rb
+    :total_score: 234.24309778810138
+    :highest_score: 112.37054774272485
+    :average_score: 46.848619557620275
+    :methods:
+      FantasyBaseball::Statistics#triple_crown_winner:
+        :operators:
+          :assignment: 20.500000000000004
+          :branch: 23.30000000000001
+          :nil?: 3.600000000000001
+          :new: 1.3000000000000003
+          :raise: 1.1000000000000003
+          :[]: 11.000000000000004
+          :each: 1.0000000000000002
+          :detect: 1.2000000000000004
+          :year_id: 1.7000000000000006
+          :==: 9.600000000000005
+          :league: 1.7000000000000006
+          :at_bats: 1.6000000000000005
+          :>: 1.4000000000000006
+          :!: 4.700000000000001
+          :empty?: 8.300000000000002
+          :player_id: 15.000000000000002
+          :player_full_name: 9.000000000000004
+          :batting_average: 4.800000000000002
+          :home_runs: 4.800000000000002
+          :runs_batted_in: 4.800000000000002
+          :<=>: 4.800000000000002
+          :lit_fixnum: 1.2000000000000004
+          :keys: 8.200000000000001
+          :first: 7.200000000000002
+        :score: 112.37054774272485
+        :path: lib/fantasy_baseball/statistics.rb:113
+      FantasyBaseball::Statistics#most_improved_batting_average:
+        :operators:
+          :assignment: 30.800000000000004
+          :branch: 25.1
+          :nil?: 6.700000000000001
+          :new: 1.3
+          :raise: 1.1
+          :[]: 8.000000000000002
+          :each: 1.0
+          :lit_fixnum: 0.7000000000000002
+          :+: 1.2000000000000002
+          :player_full_name: 1.2000000000000002
+          :detect: 2.4000000000000004
+          :year_id: 3.2000000000000006
+          :==: 2.8000000000000007
+          :at_bats: 3.2000000000000006
+          :>: 4.100000000000001
+          :!: 3.9000000000000012
+          :batting_average: 2.6000000000000005
+          :<=>: 1.2000000000000002
+          :*: 1.6000000000000003
+          :-: 1.4000000000000004
+          :<: 2.8000000000000007
+          :empty?: 1.4000000000000004
+        :score: 65.28315249740932
+        :path: lib/fantasy_baseball/statistics.rb:44
+      FantasyBaseball::Statistics#slugging_percentage:
+        :operators:
+          :assignment: 17.200000000000006
+          :branch: 8.200000000000003
+          :nil?: 2.2000000000000006
+          :new: 1.3000000000000003
+          :raise: 1.1000000000000003
+          :[]: 2.0000000000000004
+          :each: 1.0000000000000002
+          :detect: 1.2000000000000004
+          :year_id: 1.7000000000000006
+          :==: 3.0000000000000013
+          :team_id: 1.7000000000000006
+          :hits: 1.6000000000000005
+          :+: 11.800000000000002
+          :at_bats: 1.6000000000000005
+          :doubles: 1.6000000000000005
+          :triples: 1.6000000000000005
+          :home_runs: 1.6000000000000005
+          :-: 6.6000000000000005
+          :*: 6.4
+          :/: 1.2000000000000002
+        :score: 52.76097042322101
+        :path: lib/fantasy_baseball/statistics.rb:92
+      FantasyBaseball::Statistics#initialize:
+        :operators:
+          :assignment: 2.0
+          :hits: 1.0
+          :at_bats: 1.0
+        :score: 2.8284271247461903
+        :path: lib/fantasy_baseball/statistics.rb:9
+      FantasyBaseball::Statistics#none:
+        :operators:
+          :attr_accessor: 1.0
+        :score: 1.0
+        :path: 
+  - :name: FantasyBaseball::DataLoader
+    :path: lib/fantasy_baseball/data_loader.rb
+    :total_score: 204.5842125216149
+    :highest_score: 58.717714533179866
+    :average_score: 12.78651328260093
+    :methods:
+      FantasyBaseball::DataLoader#batting_data_clean?:
+        :operators:
+          :branch: 22.100000000000005
+          :player_id: 1.4000000000000001
+          :valid_string?: 5.400000000000001
+          :year_id: 1.5000000000000002
+          :league: 1.6000000000000003
+          :team_id: 1.7000000000000004
+          :games: 1.8000000000000005
+          :valid_integer?: 20.40000000000001
+          :at_bats: 1.9000000000000006
+          :runs: 2.000000000000001
+          :hits: 2.100000000000001
+          :doubles: 2.200000000000001
+          :triples: 2.300000000000001
+          :home_runs: 2.4000000000000012
+          :runs_batted_in: 2.5000000000000013
+          :stolen_bases: 2.6000000000000014
+          :caught_stealing: 2.6000000000000014
+        :score: 58.717714533179866
+        :path: lib/fantasy_baseball/data_loader.rb:136
+      FantasyBaseball::DataLoader#load_batting_data:
+        :operators:
+          :branch: 6.100000000000001
+          :empty?: 2.4000000000000004
+          :new: 1.4000000000000001
+          :raise: 3.6000000000000005
+          :assignment: 10.899999999999999
+          :clean_input_file: 1.1
+          :for: 1.3
+          :build_options_hash: 1.1
+          :foreach: 1.3000000000000003
+          :lit_fixnum: 0.4250000000000001
+          :+: 1.5000000000000004
+          :initialize_batting_data: 1.5000000000000004
+          :batting_data_clean?: 1.5000000000000004
+          :find_or_create_batter: 1.5000000000000004
+          :log_successful_import: 1.3000000000000003
+          :log_failed_import: 2.4000000000000004
+        :score: 25.581743978861176
+        :path: lib/fantasy_baseball/data_loader.rb:37
+      FantasyBaseball::DataLoader#load_player_roster:
+        :operators:
+          :branch: 5.000000000000001
+          :empty?: 1.1
+          :new: 1.4000000000000001
+          :raise: 2.4000000000000004
+          :assignment: 9.7
+          :clean_input_file: 1.1
+          :for: 1.3
+          :build_options_hash: 1.1
+          :foreach: 1.3000000000000003
+          :lit_fixnum: 0.4250000000000001
+          :+: 1.5000000000000004
+          :initialize_roster_data: 1.5000000000000004
+          :roster_data_clean?: 1.5000000000000004
+          :find_or_create_roster_entry: 1.5000000000000004
+          :log_successful_import: 1.3000000000000003
+          :log_failed_import: 1.2000000000000002
+        :score: 21.586584375486552
+        :path: lib/fantasy_baseball/data_loader.rb:14
+      FantasyBaseball::DataLoader#build_options_hash:
+        :operators:
+          :assignment: 15.399999999999997
+          :headers: 2.2
+          :col_sep: 1.1
+          :row_sep: 1.1
+          :quote_char: 1.1
+          :field_size_limit: 1.1
+          :converters: 1.1
+          :unconverted_fields: 1.1
+          :return_headers: 1.1
+          :write_headers: 1.1
+          :skip_blanks: 1.1
+          :force_quotes: 1.1
+          :encoding: 1.1
+        :score: 21.01547049199708
+        :path: lib/fantasy_baseball/data_loader.rb:65
+      FantasyBaseball::DataLoader#compute_batting_average:
+        :operators:
+          :branch: 2.2
+          :hits: 3.4000000000000004
+          :==: 2.4000000000000004
+          :at_bats: 3.2
+          :*: 1.8
+          :/: 1.6
+          :%: 1.4000000000000001
+          :Float: 1.2000000000000002
+        :score: 15.16047492659778
+        :path: lib/fantasy_baseball/data_loader.rb:109
+      FantasyBaseball::DataLoader#roster_data_clean?:
+        :operators:
+          :branch: 3.6000000000000005
+          :player_id: 1.4000000000000001
+          :valid_string?: 5.300000000000001
+          :player_birth_year: 1.5000000000000002
+          :player_first_name: 1.6000000000000003
+          :player_last_name: 1.6000000000000003
+        :score: 11.954915307102766
+        :path: lib/fantasy_baseball/data_loader.rb:129
+      FantasyBaseball::DataLoader#update_full_name:
+        :operators:
+          :assignment: 2.2
+          :branch: 2.4000000000000004
+          :detect: 1.1
+          :player_id: 3.0000000000000004
+          :==: 1.3000000000000003
+          :player_first_name: 1.5
+          :+: 2.4000000000000004
+          :player_last_name: 1.3
+        :score: 11.088733020503291
+        :path: lib/fantasy_baseball/data_loader.rb:117
+      FantasyBaseball::DataLoader#find_or_create_batter:
+        :operators:
+          :assignment: 3.4000000000000004
+          :get_batting_average: 1.1
+          :update_full_name: 1.1
+          :branch: 1.1
+          :player_id: 4.1000000000000005
+          :[]: 2.5
+          :<<: 1.2000000000000002
+        :score: 10.619322012256715
+        :path: lib/fantasy_baseball/data_loader.rb:93
+      FantasyBaseball::DataLoader#find_or_create_roster_entry:
+        :operators:
+          :branch: 1.1
+          :player_id: 4.0
+          :[]: 2.3000000000000003
+          :assignment: 2.6000000000000005
+          :new: 1.3000000000000003
+          :<<: 1.3000000000000003
+        :score: 9.337023080189962
+        :path: lib/fantasy_baseball/data_loader.rb:83
+      FantasyBaseball::DataLoader#log_failed_import:
+        :operators:
+          :open: 1.1
+          :inspect: 1.3
+          :log: 1.1
+          :close: 1.1
+        :score: 4.6000000000000005
+        :path: lib/fantasy_baseball/data_loader.rb:167
+      FantasyBaseball::DataLoader#valid_string?:
+        :operators:
+          :branch: 1.3
+          :nil?: 1.4000000000000001
+          :empty?: 1.4000000000000001
+          :!: 1.1
+        :score: 4.110960958218893
+        :path: lib/fantasy_baseball/data_loader.rb:153
+      FantasyBaseball::DataLoader#none:
+        :operators:
+          :expand_path: 2.2
+          :private: 1.1
+        :score: 3.3000000000000003
+        :path: 
+      FantasyBaseball::DataLoader#log_successful_import:
+        :operators:
+          :open: 1.1
+          :log: 1.1
+          :close: 1.1
+        :score: 3.3000000000000003
+        :path: lib/fantasy_baseball/data_loader.rb:161
+      FantasyBaseball::DataLoader#get_batting_average:
+        :operators:
+          :assignment: 1.1
+          :compute_batting_average: 1.1
+        :score: 1.5556349186104046
+        :path: lib/fantasy_baseball/data_loader.rb:104
+      FantasyBaseball::DataLoader#clean_input_file:
+        :operators:
+          :assignment: 1.1
+          :system: 1.1
+        :score: 1.5556349186104046
+        :path: lib/fantasy_baseball/data_loader.rb:123
+      FantasyBaseball::DataLoader#valid_integer?:
+        :operators:
+          :is_a?: 1.1
+        :score: 1.1
+        :path: lib/fantasy_baseball/data_loader.rb:157
+  - :name: FantasyBaseball::Statistics::initialize_batting_data
+    :path: lib/fantasy_baseball/statistics.rb
+    :total_score: 31.90611226708763
+    :highest_score: 31.90611226708763
+    :average_score: 31.90611226708763
+    :methods:
+      FantasyBaseball::Statistics::initialize_batting_data:
+        :operators:
+          :assignment: 17.0
+          :new: 1.0
+          :[]: 15.999999999999996
+          :to_i: 10.0
+        :score: 31.90611226708763
+        :path: lib/fantasy_baseball/statistics.rb:23
+  - :name: FantasyBaseball::most_improved_batting_average
+    :path: lib/fantasy_baseball.rb
+    :total_score: 20.7959731678996
+    :highest_score: 20.7959731678996
+    :average_score: 20.7959731678996
+    :methods:
+      FantasyBaseball::most_improved_batting_average:
+        :operators:
+          :branch: 1.1
+          :nil?: 1.1
+          :caller: 1.4000000000000001
+          :raise: 1.2000000000000002
+          :assignment: 2.2
+          :new: 1.1
+          :most_improved_batting_average: 1.1
+          :lit_fixnum: 0.85
+          :*: 1.3
+          :puts: 5.5
+          :[]: 5.8
+          :to_s: 1.3
+        :score: 20.7959731678996
+        :path: lib/fantasy_baseball.rb:59
+  - :name: FantasyBaseball::slugging_percentage
+    :path: lib/fantasy_baseball.rb
+    :total_score: 17.548237090944497
+    :highest_score: 17.548237090944497
+    :average_score: 17.548237090944497
+    :methods:
+      FantasyBaseball::slugging_percentage:
+        :operators:
+          :branch: 1.1
+          :nil?: 1.1
+          :caller: 1.4000000000000001
+          :raise: 1.2000000000000002
+          :assignment: 2.2
+          :new: 1.1
+          :slugging_percentage: 1.1
+          :lit_fixnum: 0.375
+          :*: 1.3
+          :puts: 4.4
+          :[]: 2.6
+          :%: 1.5
+          :Float: 1.3
+        :score: 17.548237090944497
+        :path: lib/fantasy_baseball.rb:72
+  - :name: FantasyBaseball::triple_crown_winner
+    :path: lib/fantasy_baseball.rb
+    :total_score: 14.781090115414358
+    :highest_score: 14.781090115414358
+    :average_score: 14.781090115414358
+    :methods:
+      FantasyBaseball::triple_crown_winner:
+        :operators:
+          :branch: 1.1
+          :nil?: 1.1
+          :caller: 1.4000000000000001
+          :raise: 1.2000000000000002
+          :assignment: 2.2
+          :new: 1.1
+          :triple_crown_winner: 1.1
+          :[]: 2.6
+          :puts: 4.4
+          :lit_fixnum: 0.375
+          :*: 1.3
+        :score: 14.781090115414358
+        :path: lib/fantasy_baseball.rb:90
+  - :name: FantasyBaseball::welcome
+    :path: lib/fantasy_baseball.rb
+    :total_score: 13.825
+    :highest_score: 13.825
+    :average_score: 13.825
+    :methods:
+      FantasyBaseball::welcome:
+        :operators:
+          :system: 1.1
+          :lit_fixnum: 1.125
+          :*: 3.9000000000000004
+          :puts: 7.699999999999999
+        :score: 13.825
+        :path: lib/fantasy_baseball.rb:48
+  - :name: FantasyBaseball::exec
+    :path: lib/fantasy_baseball.rb
+    :total_score: 12.872087049115228
+    :highest_score: 12.872087049115228
+    :average_score: 12.872087049115228
+    :methods:
+      FantasyBaseball::exec:
+        :operators:
+          :welcome: 1.1
+          :assignment: 1.1
+          :load_player_roster: 1.3
+          :load_batters: 1.1
+          :lit_fixnum: 1.625
+          :most_improved_batting_average: 1.1
+          :slugging_percentage: 1.1
+          :triple_crown_header: 1.1
+          :triple_crown_winner: 4.4
+        :score: 12.872087049115228
+        :path: lib/fantasy_baseball.rb:15
+  - :name: FantasyBaseball
+    :path: ''
+    :total_score: 12.402015965156634
+    :highest_score: 12.402015965156634
+    :average_score: 12.402015965156634
+    :methods:
+      FantasyBaseball#none:
+        :operators:
+          :assignment: 6.6
+          :for: 3.3000000000000003
+          :input_file_name: 3.9000000000000004
+          :expand_path: 3.3000000000000003
+        :score: 12.402015965156634
+        :path: 
+  - :name: FantasyBaseball::RosterEntry
+    :path: lib/fantasy_baseball/roster_entry.rb
+    :total_score: 22.698550317721736
+    :highest_score: 11.943198901466893
+    :average_score: 4.539710063544347
+    :methods:
+      FantasyBaseball::RosterEntry#initialize:
+        :operators:
+          :branch: 1.0
+          :nil?: 1.0
+          :new: 1.3
+          :raise: 1.1
+          :assignment: 5.0
+          :player_id: 1.0
+          :player_first_name: 2.2
+          :player_last_name: 2.2
+          :player_birth_year: 1.0
+          :get_player_full_name: 1.0
+        :score: 11.943198901466893
+        :path: lib/fantasy_baseball/roster_entry.rb:7
+      FantasyBaseball::RosterEntry#valid_string?:
+        :operators:
+          :branch: 1.2
+          :nil?: 1.3
+          :empty?: 1.3
+          :!: 1.0
+        :score: 3.794733192202055
+        :path: lib/fantasy_baseball/roster_entry.rb:21
+      FantasyBaseball::RosterEntry#get_player_full_name:
+        :operators:
+          :branch: 1.0
+          :valid_name?: 1.0
+          :+: 2.4000000000000004
+        :score: 3.5440090293338704
+        :path: lib/fantasy_baseball/roster_entry.rb:25
+      FantasyBaseball::RosterEntry#valid_name?:
+        :operators:
+          :branch: 1.0
+          :valid_string?: 2.2
+        :score: 2.4166091947189146
+        :path: lib/fantasy_baseball/roster_entry.rb:17
+      FantasyBaseball::RosterEntry#none:
+        :operators:
+          :attr_accessor: 1.0
+        :score: 1.0
+        :path: 
+  - :name: FantasyBaseball::Player
+    :path: lib/fantasy_baseball/player.rb
+    :total_score: 19.787575496657453
+    :highest_score: 10.266937225872185
+    :average_score: 6.595858498885818
+    :methods:
+      FantasyBaseball::Player#get_player_full_name:
+        :operators:
+          :assignment: 1.0
+          :player_id: 2.3
+          :branch: 2.1
+          :each: 1.0
+          :==: 1.1
+          :player_first_name: 1.6
+          :+: 2.6000000000000005
+          :player_last_name: 1.4000000000000001
+        :score: 10.266937225872185
+        :path: lib/fantasy_baseball/player.rb:14
+      FantasyBaseball::Player#initialize:
+        :operators:
+          :assignment: 3.0
+          :branch: 2.0
+          :nil?: 2.2
+          :new: 1.3
+          :raise: 1.1
+          :player_id: 1.0
+          :get_player_full_name: 1.0
+        :score: 7.520638270785266
+        :path: lib/fantasy_baseball/player.rb:6
+      FantasyBaseball::Player#none:
+        :operators:
+          :attr_accessor: 1.0
+          :private: 1.0
+        :score: 2.0
+        :path: 
+  - :name: main
+    :path: ''
+    :total_score: 7.700000000000001
+    :highest_score: 7.700000000000001
+    :average_score: 7.700000000000001
+    :methods:
+      main#none:
+        :operators:
+          :require_relative: 4.4
+          :require: 3.3000000000000003
+        :score: 7.700000000000001
+        :path: 
+  - :name: FantasyBaseball::Statistics::initialize_roster_data
+    :path: lib/fantasy_baseball/statistics.rb
+    :total_score: 7.0710678118654755
+    :highest_score: 7.0710678118654755
+    :average_score: 7.0710678118654755
+    :methods:
+      FantasyBaseball::Statistics::initialize_roster_data:
+        :operators:
+          :assignment: 5.0
+          :new: 1.0
+          :[]: 4.0
+        :score: 7.0710678118654755
+        :path: lib/fantasy_baseball/statistics.rb:14
+  - :name: FantasyBaseball::triple_crown_header
+    :path: lib/fantasy_baseball.rb
+    :total_score: 4.9750000000000005
+    :highest_score: 4.9750000000000005
+    :average_score: 4.9750000000000005
+    :methods:
+      FantasyBaseball::triple_crown_header:
+        :operators:
+          :lit_fixnum: 0.375
+          :*: 1.3
+          :puts: 3.3000000000000003
+        :score: 4.9750000000000005
+        :path: lib/fantasy_baseball.rb:84
+  - :name: FantasyBaseball::load_player_roster
+    :path: lib/fantasy_baseball.rb
+    :total_score: 3.4785054261852175
+    :highest_score: 3.4785054261852175
+    :average_score: 3.4785054261852175
+    :methods:
+      FantasyBaseball::load_player_roster:
+        :operators:
+          :puts: 1.1
+          :assignment: 1.1
+          :new: 1.1
+          :load_player_roster: 1.1
+        :score: 3.4785054261852175
+        :path: lib/fantasy_baseball.rb:30
+  - :name: FantasyBaseball::load_batters
+    :path: lib/fantasy_baseball.rb
+    :total_score: 3.4785054261852175
+    :highest_score: 3.4785054261852175
+    :average_score: 3.4785054261852175
+    :methods:
+      FantasyBaseball::load_batters:
+        :operators:
+          :puts: 1.1
+          :assignment: 1.1
+          :new: 1.1
+          :load_batting_data: 1.1
+        :score: 3.4785054261852175
+        :path: lib/fantasy_baseball.rb:36
+  - :name: FantasyBaseball::load_pitchers
+    :path: lib/fantasy_baseball.rb
+    :total_score: 2.459674775249769
+    :highest_score: 2.459674775249769
+    :average_score: 2.459674775249769
+    :methods:
+      FantasyBaseball::load_pitchers:
+        :operators:
+          :assignment: 1.1
+          :new: 1.1
+          :load_pitcher_data: 1.1
+        :score: 2.459674775249769
+        :path: lib/fantasy_baseball.rb:43
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: FantasyBaseball
+      :complexity: 0
+      :lines: 3
+      :methods: []
+    - :class_name: FantasyBaseball::Statistics
+      :complexity: 41
+      :lines: 157
+      :methods:
+      - :name: FantasyBaseball::Statistics#most_improved_batting_average
+        :complexity: 17
+        :lines: 46
+      - :name: FantasyBaseball::Statistics#triple_crown_winner
+        :complexity: 15
+        :lines: 45
+      - :name: FantasyBaseball::Statistics#slugging_percentage
+        :complexity: 6
+        :lines: 19
+      - :name: FantasyBaseball::Statistics#self.initialize_batting_data
+        :complexity: 1
+        :lines: 19
+      - :name: FantasyBaseball::Statistics#self.initialize_roster_data
+        :complexity: 1
+        :lines: 7
+      - :name: FantasyBaseball::Statistics#initialize
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fantasy_baseball/statistics.rb
+  - :classes:
+    - :class_name: FantasyBaseball
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    - :class_name: FantasyBaseball::DataLoader
+      :complexity: 29
+      :lines: 163
+      :methods:
+      - :name: FantasyBaseball::DataLoader#load_batting_data
+        :complexity: 6
+        :lines: 24
+      - :name: FantasyBaseball::DataLoader#load_player_roster
+        :complexity: 5
+        :lines: 21
+      - :name: FantasyBaseball::DataLoader#update_full_name
+        :complexity: 3
+        :lines: 4
+      - :name: FantasyBaseball::DataLoader#compute_batting_average
+        :complexity: 2
+        :lines: 6
+      - :name: FantasyBaseball::DataLoader#find_or_create_roster_entry
+        :complexity: 2
+        :lines: 8
+      - :name: FantasyBaseball::DataLoader#find_or_create_batter
+        :complexity: 2
+        :lines: 9
+      - :name: FantasyBaseball::DataLoader#valid_string?
+        :complexity: 1
+        :lines: 2
+      - :name: FantasyBaseball::DataLoader#valid_integer?
+        :complexity: 1
+        :lines: 2
+      - :name: FantasyBaseball::DataLoader#clean_input_file
+        :complexity: 1
+        :lines: 4
+      - :name: FantasyBaseball::DataLoader#get_batting_average
+        :complexity: 1
+        :lines: 3
+      - :name: FantasyBaseball::DataLoader#roster_data_clean?
+        :complexity: 1
+        :lines: 5
+      - :name: FantasyBaseball::DataLoader#batting_data_clean?
+        :complexity: 1
+        :lines: 15
+      - :name: FantasyBaseball::DataLoader#build_options_hash
+        :complexity: 1
+        :lines: 16
+      - :name: FantasyBaseball::DataLoader#log_successful_import
+        :complexity: 1
+        :lines: 4
+      - :name: FantasyBaseball::DataLoader#log_failed_import
+        :complexity: 1
+        :lines: 4
+    :filename: lib/fantasy_baseball/data_loader.rb
+  - :classes:
+    - :class_name: FantasyBaseball
+      :complexity: 12
+      :lines: 99
+      :methods:
+      - :name: FantasyBaseball#self.triple_crown_winner
+        :complexity: 2
+        :lines: 11
+      - :name: FantasyBaseball#self.most_improved_batting_average
+        :complexity: 2
+        :lines: 11
+      - :name: FantasyBaseball#self.slugging_percentage
+        :complexity: 2
+        :lines: 10
+      - :name: FantasyBaseball#self.welcome
+        :complexity: 1
+        :lines: 9
+      - :name: FantasyBaseball#self.triple_crown_header
+        :complexity: 1
+        :lines: 4
+      - :name: FantasyBaseball#self.load_pitchers
+        :complexity: 1
+        :lines: 3
+      - :name: FantasyBaseball#self.load_batters
+        :complexity: 1
+        :lines: 4
+      - :name: FantasyBaseball#self.load_player_roster
+        :complexity: 1
+        :lines: 4
+      - :name: FantasyBaseball#self.exec
+        :complexity: 1
+        :lines: 13
+    :filename: lib/fantasy_baseball.rb
+  - :classes:
+    - :class_name: FantasyBaseball
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    - :class_name: FantasyBaseball::RosterEntry
+      :complexity: 6
+      :lines: 30
+      :methods:
+      - :name: FantasyBaseball::RosterEntry#get_player_full_name
+        :complexity: 2
+        :lines: 6
+      - :name: FantasyBaseball::RosterEntry#initialize
+        :complexity: 2
+        :lines: 8
+      - :name: FantasyBaseball::RosterEntry#valid_name?
+        :complexity: 1
+        :lines: 2
+      - :name: FantasyBaseball::RosterEntry#valid_string?
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fantasy_baseball/roster_entry.rb
+  - :classes:
+    - :class_name: FantasyBaseball
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    - :class_name: FantasyBaseball::Player
+      :complexity: 5
+      :lines: 22
+      :methods:
+      - :name: FantasyBaseball::Player#get_player_full_name
+        :complexity: 3
+        :lines: 9
+      - :name: FantasyBaseball::Player#initialize
+        :complexity: 2
+        :lines: 4
+    :filename: lib/fantasy_baseball/player.rb
+  :classes:
+  - :name: FantasyBaseball::Statistics
+    :complexity: 41
+    :lines: 157
+    :defs:
+    - :name: FantasyBaseball::Statistics#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FantasyBaseball::Statistics#self.initialize_roster_data
+      :complexity: 1
+      :lines: 7
+    - :name: FantasyBaseball::Statistics#self.initialize_batting_data
+      :complexity: 1
+      :lines: 19
+    - :name: FantasyBaseball::Statistics#most_improved_batting_average
+      :complexity: 17
+      :lines: 46
+    - :name: FantasyBaseball::Statistics#slugging_percentage
+      :complexity: 6
+      :lines: 19
+    - :name: FantasyBaseball::Statistics#triple_crown_winner
+      :complexity: 15
+      :lines: 45
+  - :name: FantasyBaseball::DataLoader
+    :complexity: 29
+    :lines: 163
+    :defs:
+    - :name: FantasyBaseball::DataLoader#load_player_roster
+      :complexity: 5
+      :lines: 21
+    - :name: FantasyBaseball::DataLoader#load_batting_data
+      :complexity: 6
+      :lines: 24
+    - :name: FantasyBaseball::DataLoader#build_options_hash
+      :complexity: 1
+      :lines: 16
+    - :name: FantasyBaseball::DataLoader#find_or_create_roster_entry
+      :complexity: 2
+      :lines: 8
+    - :name: FantasyBaseball::DataLoader#find_or_create_batter
+      :complexity: 2
+      :lines: 9
+    - :name: FantasyBaseball::DataLoader#get_batting_average
+      :complexity: 1
+      :lines: 3
+    - :name: FantasyBaseball::DataLoader#compute_batting_average
+      :complexity: 2
+      :lines: 6
+    - :name: FantasyBaseball::DataLoader#update_full_name
+      :complexity: 3
+      :lines: 4
+    - :name: FantasyBaseball::DataLoader#clean_input_file
+      :complexity: 1
+      :lines: 4
+    - :name: FantasyBaseball::DataLoader#roster_data_clean?
+      :complexity: 1
+      :lines: 5
+    - :name: FantasyBaseball::DataLoader#batting_data_clean?
+      :complexity: 1
+      :lines: 15
+    - :name: FantasyBaseball::DataLoader#valid_string?
+      :complexity: 1
+      :lines: 2
+    - :name: FantasyBaseball::DataLoader#valid_integer?
+      :complexity: 1
+      :lines: 2
+    - :name: FantasyBaseball::DataLoader#log_successful_import
+      :complexity: 1
+      :lines: 4
+    - :name: FantasyBaseball::DataLoader#log_failed_import
+      :complexity: 1
+      :lines: 4
+  - :name: FantasyBaseball
+    :complexity: 12
+    :lines: 99
+    :defs:
+    - :name: FantasyBaseball#self.exec
+      :complexity: 1
+      :lines: 13
+    - :name: FantasyBaseball#self.load_player_roster
+      :complexity: 1
+      :lines: 4
+    - :name: FantasyBaseball#self.load_batters
+      :complexity: 1
+      :lines: 4
+    - :name: FantasyBaseball#self.load_pitchers
+      :complexity: 1
+      :lines: 3
+    - :name: FantasyBaseball#self.welcome
+      :complexity: 1
+      :lines: 9
+    - :name: FantasyBaseball#self.most_improved_batting_average
+      :complexity: 2
+      :lines: 11
+    - :name: FantasyBaseball#self.slugging_percentage
+      :complexity: 2
+      :lines: 10
+    - :name: FantasyBaseball#self.triple_crown_header
+      :complexity: 1
+      :lines: 4
+    - :name: FantasyBaseball#self.triple_crown_winner
+      :complexity: 2
+      :lines: 11
+  - :name: FantasyBaseball::RosterEntry
+    :complexity: 6
+    :lines: 30
+    :defs:
+    - :name: FantasyBaseball::RosterEntry#initialize
+      :complexity: 2
+      :lines: 8
+    - :name: FantasyBaseball::RosterEntry#valid_name?
+      :complexity: 1
+      :lines: 2
+    - :name: FantasyBaseball::RosterEntry#valid_string?
+      :complexity: 1
+      :lines: 2
+    - :name: FantasyBaseball::RosterEntry#get_player_full_name
+      :complexity: 2
+      :lines: 6
+  - :name: FantasyBaseball::Player
+    :complexity: 5
+    :lines: 22
+    :defs:
+    - :name: FantasyBaseball::Player#initialize
+      :complexity: 2
+      :lines: 4
+    - :name: FantasyBaseball::Player#get_player_full_name
+      :complexity: 3
+      :lines: 9
+  - :name: FantasyBaseball
+    :complexity: 0
+    :lines: 4
+  - :name: FantasyBaseball
+    :complexity: 0
+    :lines: 4
+  - :name: FantasyBaseball
+    :complexity: 0
+    :lines: 4
+  - :name: FantasyBaseball
+    :complexity: 0
+    :lines: 3
+  :methods:
+  - :name: FantasyBaseball::Statistics#most_improved_batting_average
+    :complexity: 17
+    :lines: 46
+  - :name: FantasyBaseball::Statistics#triple_crown_winner
+    :complexity: 15
+    :lines: 45
+  - :name: FantasyBaseball::DataLoader#load_batting_data
+    :complexity: 6
+    :lines: 24
+  - :name: FantasyBaseball::Statistics#slugging_percentage
+    :complexity: 6
+    :lines: 19
+  - :name: FantasyBaseball::DataLoader#load_player_roster
+    :complexity: 5
+    :lines: 21
+  - :name: FantasyBaseball::Player#get_player_full_name
+    :complexity: 3
+    :lines: 9
+  - :name: FantasyBaseball::DataLoader#update_full_name
+    :complexity: 3
+    :lines: 4
+  - :name: FantasyBaseball::RosterEntry#get_player_full_name
+    :complexity: 2
+    :lines: 6
+  - :name: FantasyBaseball#self.slugging_percentage
+    :complexity: 2
+    :lines: 10
+  - :name: FantasyBaseball#self.most_improved_batting_average
+    :complexity: 2
+    :lines: 11
+  - :name: FantasyBaseball::RosterEntry#initialize
+    :complexity: 2
+    :lines: 8
+  - :name: FantasyBaseball::Player#initialize
+    :complexity: 2
+    :lines: 4
+  - :name: FantasyBaseball::DataLoader#find_or_create_roster_entry
+    :complexity: 2
+    :lines: 8
+  - :name: FantasyBaseball::DataLoader#find_or_create_batter
+    :complexity: 2
+    :lines: 9
+  - :name: FantasyBaseball::DataLoader#compute_batting_average
+    :complexity: 2
+    :lines: 6
+  - :name: FantasyBaseball#self.triple_crown_winner
+    :complexity: 2
+    :lines: 11
+  - :name: FantasyBaseball::DataLoader#valid_integer?
+    :complexity: 1
+    :lines: 2
+  - :name: FantasyBaseball::DataLoader#log_successful_import
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball::DataLoader#valid_string?
+    :complexity: 1
+    :lines: 2
+  - :name: FantasyBaseball::DataLoader#batting_data_clean?
+    :complexity: 1
+    :lines: 15
+  - :name: FantasyBaseball::DataLoader#roster_data_clean?
+    :complexity: 1
+    :lines: 5
+  - :name: FantasyBaseball::DataLoader#clean_input_file
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball::DataLoader#log_failed_import
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball#self.exec
+    :complexity: 1
+    :lines: 13
+  - :name: FantasyBaseball::DataLoader#get_batting_average
+    :complexity: 1
+    :lines: 3
+  - :name: FantasyBaseball#self.load_player_roster
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball#self.load_batters
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball::DataLoader#build_options_hash
+    :complexity: 1
+    :lines: 16
+  - :name: FantasyBaseball#self.load_pitchers
+    :complexity: 1
+    :lines: 3
+  - :name: FantasyBaseball#self.welcome
+    :complexity: 1
+    :lines: 9
+  - :name: FantasyBaseball#self.triple_crown_header
+    :complexity: 1
+    :lines: 4
+  - :name: FantasyBaseball::RosterEntry#valid_name?
+    :complexity: 1
+    :lines: 2
+  - :name: FantasyBaseball::RosterEntry#valid_string?
+    :complexity: 1
+    :lines: 2
+  - :name: FantasyBaseball::Statistics#self.initialize_batting_data
+    :complexity: 1
+    :lines: 19
+  - :name: FantasyBaseball::Statistics#self.initialize_roster_data
+    :complexity: 1
+    :lines: 7
+  - :name: FantasyBaseball::Statistics#initialize
+    :complexity: 1
+    :lines: 3
+:reek:
+  :matches:
+  - :file_path: lib/fantasy_baseball.rb
+    :code_smells:
+    - :method: FantasyBaseball#self.exec
+      :message: has approx 9 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball#self.most_improved_batting_average
+      :message: has approx 8 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball#self.most_improved_batting_average
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball#self.slugging_percentage
+      :message: has approx 7 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball#self.slugging_percentage
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball#self.triple_crown_winner
+      :message: has approx 7 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball#self.triple_crown_winner
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball#self.welcome
+      :message: calls ("*" * 80) 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball#self.welcome
+      :message: calls puts(("*" * 80)) 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball#self.welcome
+      :message: has approx 8 statements
+      :type: TooManyStatements
+  - :file_path: lib/fantasy_baseball/data_loader.rb
+    :code_smells:
+    - :method: FantasyBaseball::DataLoader
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: calls hash[:headers] = options.headers twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: calls options.headers twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: has approx 15 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: refers to hash more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#build_options_hash
+      :message: refers to options more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#compute_batting_average
+      :message: calls data.at_bats twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#compute_batting_average
+      :message: calls data.hits twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#compute_batting_average
+      :message: refers to data more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#find_or_create_batter
+      :message: calls @batters_by_id[data.player_id] twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#find_or_create_batter
+      :message: calls data.player_id 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#find_or_create_roster_entry
+      :message: calls @players_by_id[data.player_id] twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#find_or_create_roster_entry
+      :message: calls data.player_id 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#load_batting_data
+      :message: calls log_failed_import(file_path, error) twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::DataLoader#load_batting_data
+      :message: has approx 17 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::DataLoader#load_player_roster
+      :message: has approx 15 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::DataLoader#log_failed_import
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::DataLoader#log_failed_import
+      :message: refers to exception more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#log_successful_import
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::DataLoader#update_full_name
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::DataLoader#update_full_name
+      :message: refers to data more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#update_full_name
+      :message: refers to temp_entry more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#valid_integer?
+      :message: refers to value more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::DataLoader#valid_string?
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::DataLoader#valid_string?
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball::DataLoader#valid_string?
+      :message: refers to string more than self
+      :type: FeatureEnvy
+  - :file_path: lib/fantasy_baseball/player.rb
+    :code_smells:
+    - :method: FantasyBaseball::Player
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: FantasyBaseball::Player#get_player_full_name
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::Player#get_player_full_name
+      :message: has the variable name 'r'
+      :type: UncommunicativeVariableName
+    - :method: FantasyBaseball::Player#get_player_full_name
+      :message: refers to r more than self
+      :type: FeatureEnvy
+    - :method: FantasyBaseball::Player#initialize
+      :message: performs a nil-check.
+      :type: NilCheck
+  - :file_path: lib/fantasy_baseball/roster_entry.rb
+    :code_smells:
+    - :method: FantasyBaseball::RosterEntry
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: FantasyBaseball::RosterEntry#initialize
+      :message: calls args.player_first_name twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::RosterEntry#initialize
+      :message: calls args.player_last_name twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::RosterEntry#initialize
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball::RosterEntry#valid_string?
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: FantasyBaseball::RosterEntry#valid_string?
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball::RosterEntry#valid_string?
+      :message: refers to string more than self
+      :type: FeatureEnvy
+  - :file_path: lib/fantasy_baseball/statistics.rb
+    :code_smells:
+    - :method: FantasyBaseball::Statistics
+      :message: has at least 19 instance variables
+      :type: TooManyInstanceVariables
+    - :method: FantasyBaseball::Statistics
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: FantasyBaseball::Statistics
+      :message: takes parameters [args, batters] to 3 methods
+      :type: DataClump
+    - :method: FantasyBaseball::Statistics
+      :message: tests (batters.nil? or args.nil?) at least 3 times
+      :type: RepeatedConditional
+    - :method: FantasyBaseball::Statistics
+      :message: tests (data.at_bats > @limit_at_bats) at least 3 times
+      :type: RepeatedConditional
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls (data.at_bats > @limit_at_bats) twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls @most_improved[:delta] = @delta_flag twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls @most_improved[:delta] twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls @most_improved[:player_full_name] = player_full_name twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls @most_improved[:player_id] = player_id twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls data.at_bats twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls data.year_id twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: calls data_by_year.detect twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: has approx 30 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::Statistics#most_improved_batting_average
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball::Statistics#slugging_percentage
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+    - :method: FantasyBaseball::Statistics#slugging_percentage
+      :message: has approx 14 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::Statistics#slugging_percentage
+      :message: performs a nil-check.
+      :type: NilCheck
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @highest_batting_average.empty? twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @highest_batting_average.keys 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @highest_batting_average.keys.first 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @highest_batting_average[candidate.player_id] = { :player_full_name
+        => (candidate.player_full_name), :batting_average => (candidate.batting_average)
+        } twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @most_home_runs.empty? twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @most_home_runs[candidate.player_id] = { :player_full_name =>
+        (candidate.player_full_name), :home_runs => (candidate.home_runs) } twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @most_rbis.empty? twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls @most_rbis[candidate.player_id] = { :player_full_name => (candidate.player_full_name),
+        :runs_batted_in => (candidate.runs_batted_in) } twice
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls candidate.batting_average 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls candidate.home_runs 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls candidate.player_full_name 6 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls candidate.player_id 9 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: calls candidate.runs_batted_in 3 times
+      :type: DuplicateMethodCall
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: has approx 21 statements
+      :type: TooManyStatements
+    - :method: FantasyBaseball::Statistics#triple_crown_winner
+      :message: performs a nil-check.
+      :type: NilCheck
+:roodi:
+  :total:
+  - Checked 5 files
+  :problems:
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '67'
+    :problem: Case statement is missing an else clause.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '53'
+    :problem: Block cyclomatic complexity is 16.  It should be 4 or less.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '126'
+    :problem: Block cyclomatic complexity is 11.  It should be 4 or less.
+  - :file: lib/fantasy_baseball/data_loader.rb
+    :line: '136'
+    :problem: Method name "batting_data_clean?" cyclomatic complexity is 14.  It should
+      be 8 or less.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '44'
+    :problem: Method name "most_improved_batting_average" cyclomatic complexity is
+      18.  It should be 8 or less.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '113'
+    :problem: Method name "triple_crown_winner" cyclomatic complexity is 18.  It should
+      be 8 or less.
+  - :file: lib/fantasy_baseball/data_loader.rb
+    :line: '37'
+    :problem: Method "load_batting_data" has 23 lines.  It should have 20 or less.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '44'
+    :problem: Method "most_improved_batting_average" has 45 lines.  It should have
+      20 or less.
+  - :file: lib/fantasy_baseball/statistics.rb
+    :line: '113'
+    :problem: Method "triple_crown_winner" has 44 lines.  It should have 20 or less.
+:stats:
+  :codeLOC: 414
+  :testLOC: 239
+  :code_to_test_ratio: 0.6
+  :lines:
+  - :name: Libraries
+    :lines: 500
+    :loc: 414
+    :classes: 4
+    :methods: 36
+    :methods_per_class: 9
+    :loc_per_method: 9
+  - :name: Lib specs
+    :lines: 292
+    :loc: 239
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 792
+    :loc: 653
+    :classes: 4
+    :methods: 36
+    :methods_per_class: 9
+    :loc_per_method: 16
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:113
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '113'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:113", nil, nil]'
+    details:
+      flog: complexity is 112.4
+      saikuro: complexity is 15.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:44
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '44'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:44", nil, nil]'
+    details:
+      flog: complexity is 65.3
+      saikuro: complexity is 17.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:136
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '136'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:136", nil, nil]'
+    details:
+      flog: complexity is 58.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:92
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '92'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:92", nil, nil]'
+    details:
+      flog: complexity is 52.8
+      saikuro: complexity is 6.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:23
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '23'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:23", nil, nil]'
+    details:
+      flog: complexity is 31.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:37
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '37'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:37", nil, nil]'
+    details:
+      flog: complexity is 25.6
+      saikuro: complexity is 6.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:14
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:14", nil, nil]'
+    details:
+      flog: complexity is 21.6
+      saikuro: complexity is 5.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:65
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '65'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:65", nil, nil]'
+    details:
+      flog: complexity is 21.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:59
+      file_name: lib/fantasy_baseball.rb
+      line_number: '59'
+      hash_key: '["lib/fantasy_baseball.rb:59", nil, nil]'
+    details:
+      flog: complexity is 20.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:72
+      file_name: lib/fantasy_baseball.rb
+      line_number: '72'
+      hash_key: '["lib/fantasy_baseball.rb:72", nil, nil]'
+    details:
+      flog: complexity is 17.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:109
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '109'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:109", nil, nil]'
+    details:
+      flog: complexity is 15.2
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:90
+      file_name: lib/fantasy_baseball.rb
+      line_number: '90'
+      hash_key: '["lib/fantasy_baseball.rb:90", nil, nil]'
+    details:
+      flog: complexity is 14.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:117
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '117'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:117", nil, nil]'
+    details:
+      flog: complexity is 11.1
+      saikuro: complexity is 3.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb:7
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '7'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:7", nil, nil]'
+    details:
+      flog: complexity is 11.9
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:48
+      file_name: lib/fantasy_baseball.rb
+      line_number: '48'
+      hash_key: '["lib/fantasy_baseball.rb:48", nil, nil]'
+    details:
+      flog: complexity is 13.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/player.rb:14
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/player.rb:14", nil, nil]'
+    details:
+      flog: complexity is 10.3
+      saikuro: complexity is 3.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:129
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '129'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:129", nil, nil]'
+    details:
+      flog: complexity is 12.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:15
+      file_name: lib/fantasy_baseball.rb
+      line_number: '15'
+      hash_key: '["lib/fantasy_baseball.rb:15", nil, nil]'
+    details:
+      flog: complexity is 12.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:93
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '93'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:93", nil, nil]'
+    details:
+      flog: complexity is 10.6
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:83
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '83'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:83", nil, nil]'
+    details:
+      flog: complexity is 9.3
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/player.rb:6
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: '6'
+      hash_key: '["lib/fantasy_baseball/player.rb:6", nil, nil]'
+    details:
+      flog: complexity is 7.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:14
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:14", nil, nil]'
+    details:
+      flog: complexity is 7.1
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:167
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '167'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:167", nil, nil]'
+    details:
+      flog: complexity is 4.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb:25
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '25'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:25", nil, nil]'
+    details:
+      flog: complexity is 3.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:153
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '153'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:153", nil, nil]'
+    details:
+      flog: complexity is 4.1
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:84
+      file_name: lib/fantasy_baseball.rb
+      line_number: '84'
+      hash_key: '["lib/fantasy_baseball.rb:84", nil, nil]'
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb:21
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '21'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:21", nil, nil]'
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:161
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '161'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:161", nil, nil]'
+    details:
+      flog: complexity is 3.3
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:9
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '9'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:9", nil, nil]'
+    details:
+      flog: complexity is 2.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:30
+      file_name: lib/fantasy_baseball.rb
+      line_number: '30'
+      hash_key: '["lib/fantasy_baseball.rb:30", nil, nil]'
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:36
+      file_name: lib/fantasy_baseball.rb
+      line_number: '36'
+      hash_key: '["lib/fantasy_baseball.rb:36", nil, nil]'
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb:17
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '17'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:17", nil, nil]'
+    details:
+      flog: complexity is 2.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/statistics.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 14 times)
+      flay: found 2 code duplications
+      saikuro: average complexity is 1.0
+      reek: found 35 code smells
+      roodi: found 7 design problems
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:104
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '104'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:104", nil, nil]'
+    details:
+      flog: complexity is 1.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:123
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '123'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:123", nil, nil]'
+    details:
+      flog: complexity is 1.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:43
+      file_name: lib/fantasy_baseball.rb
+      line_number: '43'
+      hash_key: '["lib/fantasy_baseball.rb:43", nil, nil]'
+    details:
+      flog: complexity is 2.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 19 times)
+      saikuro: average complexity is 1.3
+      reek: found 10 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:157
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '157'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:157", nil, nil]'
+    details:
+      flog: complexity is 1.1
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/data_loader.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 22 times)
+      reek: found 27 code smells
+      roodi: found 2 design problems
+  - location:
+      class_name: 
+      method_name: 
+      file_path: README.md
+      file_name: README.md
+      line_number: 
+      hash_key: '["README.md", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 35 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/player.rb
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/player.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 12 times)
+      reek: found 5 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: spec/lib/statistics_spec.rb
+      file_name: spec/lib/statistics_spec.rb
+      line_number: 
+      hash_key: '["spec/lib/statistics_spec.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 12 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: spec/lib/data_loader_spec.rb
+      file_name: spec/lib/data_loader_spec.rb
+      line_number: 
+      hash_key: '["spec/lib/data_loader_spec.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 14 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: spec/lib/batter_spec.rb
+      file_name: spec/lib/batter_spec.rb
+      line_number: 
+      hash_key: '["spec/lib/batter_spec.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 14 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/batter.rb
+      file_name: lib/fantasy_baseball/batter.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/batter.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 16 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb", nil, nil]'
+    details:
+      reek: found 7 code smells
+  classes:
+  - location:
+      class_name: Statistics
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:113
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '113'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:113", "Statistics", nil]'
+    details:
+      flog: average complexity is 46.8
+      saikuro: average complexity is 6.8
+      reek: found 35 code smells
+  - location:
+      class_name: initialize_batting_data
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:23
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '23'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:23", "initialize_batting_data",
+        nil]'
+    details:
+      flog: complexity is 31.9
+  - location:
+      class_name: DataLoader
+      method_name: 
+      file_path: lib/fantasy_baseball/data_loader.rb:136
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '136'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:136", "DataLoader", nil]'
+    details:
+      flog: average complexity is 12.8
+      saikuro: average complexity is 1.9
+      reek: found 27 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: 
+      file_path: lib/fantasy_baseball.rb:59
+      file_name: lib/fantasy_baseball.rb
+      line_number: '59'
+      hash_key: '["lib/fantasy_baseball.rb:59", "FantasyBaseball", nil]'
+    details:
+      flog: average complexity is 10.7
+      saikuro: average complexity is 1.3
+  - location:
+      class_name: Player
+      method_name: 
+      file_path: lib/fantasy_baseball/player.rb:14
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/player.rb:14", "Player", nil]'
+    details:
+      flog: average complexity is 6.6
+      saikuro: average complexity is 2.5
+      reek: found 5 code smells
+  - location:
+      class_name: main
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", nil]'
+    details:
+      flog: complexity is 7.7
+  - location:
+      class_name: initialize_roster_data
+      method_name: 
+      file_path: lib/fantasy_baseball/statistics.rb:14
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:14", "initialize_roster_data",
+        nil]'
+    details:
+      flog: complexity is 7.1
+  - location:
+      class_name: RosterEntry
+      method_name: 
+      file_path: lib/fantasy_baseball/roster_entry.rb:7
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '7'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:7", "RosterEntry", nil]'
+    details:
+      flog: average complexity is 4.5
+      saikuro: average complexity is 1.5
+      reek: found 7 code smells
+  - location:
+      class_name: FantasyBaseball#self
+      method_name: 
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball#self", nil]'
+    details:
+      reek: found 10 code smells
+  methods:
+  - location:
+      class_name: Statistics
+      method_name: Statistics#triple_crown_winner
+      file_path: lib/fantasy_baseball/statistics.rb:113
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '113'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:113", "Statistics", "Statistics#triple_crown_winner"]'
+      simple_method_name: "#triple_crown_winner"
+    details:
+      flog: complexity is 112.4
+      saikuro: complexity is 15.0
+      reek: found 16 code smells
+  - location:
+      class_name: Statistics
+      method_name: Statistics#most_improved_batting_average
+      file_path: lib/fantasy_baseball/statistics.rb:44
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '44'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:44", "Statistics", "Statistics#most_improved_batting_average"]'
+      simple_method_name: "#most_improved_batting_average"
+    details:
+      flog: complexity is 65.3
+      saikuro: complexity is 17.0
+      reek: found 11 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#batting_data_clean?
+      file_path: lib/fantasy_baseball/data_loader.rb:136
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '136'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:136", "DataLoader", "DataLoader#batting_data_clean?"]'
+      simple_method_name: "#batting_data_clean?"
+    details:
+      flog: complexity is 58.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Statistics
+      method_name: Statistics#slugging_percentage
+      file_path: lib/fantasy_baseball/statistics.rb:92
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '92'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:92", "Statistics", "Statistics#slugging_percentage"]'
+      simple_method_name: "#slugging_percentage"
+    details:
+      flog: complexity is 52.8
+      saikuro: complexity is 6.0
+      reek: found 3 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#load_batting_data
+      file_path: lib/fantasy_baseball/data_loader.rb:37
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '37'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:37", "DataLoader", "DataLoader#load_batting_data"]'
+      simple_method_name: "#load_batting_data"
+    details:
+      flog: complexity is 25.6
+      saikuro: complexity is 6.0
+      reek: found 2 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#load_player_roster
+      file_path: lib/fantasy_baseball/data_loader.rb:14
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:14", "DataLoader", "DataLoader#load_player_roster"]'
+      simple_method_name: "#load_player_roster"
+    details:
+      flog: complexity is 21.6
+      saikuro: complexity is 5.0
+      reek: found 1 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#build_options_hash
+      file_path: lib/fantasy_baseball/data_loader.rb:65
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '65'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:65", "DataLoader", "DataLoader#build_options_hash"]'
+      simple_method_name: "#build_options_hash"
+    details:
+      flog: complexity is 21.0
+      saikuro: complexity is 1.0
+      reek: found 6 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#most_improved_batting_average
+      file_path: lib/fantasy_baseball.rb:59
+      file_name: lib/fantasy_baseball.rb
+      line_number: '59'
+      hash_key: '["lib/fantasy_baseball.rb:59", "FantasyBaseball", "FantasyBaseball#most_improved_batting_average"]'
+      simple_method_name: "#most_improved_batting_average"
+    details:
+      flog: complexity is 20.8
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#compute_batting_average
+      file_path: lib/fantasy_baseball/data_loader.rb:109
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '109'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:109", "DataLoader", "DataLoader#compute_batting_average"]'
+      simple_method_name: "#compute_batting_average"
+    details:
+      flog: complexity is 15.2
+      saikuro: complexity is 2.0
+      reek: found 3 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#slugging_percentage
+      file_path: lib/fantasy_baseball.rb:72
+      file_name: lib/fantasy_baseball.rb
+      line_number: '72'
+      hash_key: '["lib/fantasy_baseball.rb:72", "FantasyBaseball", "FantasyBaseball#slugging_percentage"]'
+      simple_method_name: "#slugging_percentage"
+    details:
+      flog: complexity is 17.5
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#update_full_name
+      file_path: lib/fantasy_baseball/data_loader.rb:117
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '117'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:117", "DataLoader", "DataLoader#update_full_name"]'
+      simple_method_name: "#update_full_name"
+    details:
+      flog: complexity is 11.1
+      saikuro: complexity is 3.0
+      reek: found 3 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#triple_crown_winner
+      file_path: lib/fantasy_baseball.rb:90
+      file_name: lib/fantasy_baseball.rb
+      line_number: '90'
+      hash_key: '["lib/fantasy_baseball.rb:90", "FantasyBaseball", "FantasyBaseball#triple_crown_winner"]'
+      simple_method_name: "#triple_crown_winner"
+    details:
+      flog: complexity is 14.8
+  - location:
+      class_name: RosterEntry
+      method_name: RosterEntry#initialize
+      file_path: lib/fantasy_baseball/roster_entry.rb:7
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '7'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:7", "RosterEntry", "RosterEntry#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      flog: complexity is 11.9
+      saikuro: complexity is 2.0
+      reek: found 3 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#welcome
+      file_path: lib/fantasy_baseball.rb:48
+      file_name: lib/fantasy_baseball.rb
+      line_number: '48'
+      hash_key: '["lib/fantasy_baseball.rb:48", "FantasyBaseball", "FantasyBaseball#welcome"]'
+      simple_method_name: "#welcome"
+    details:
+      flog: complexity is 13.8
+  - location:
+      class_name: Player
+      method_name: Player#get_player_full_name
+      file_path: lib/fantasy_baseball/player.rb:14
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: '14'
+      hash_key: '["lib/fantasy_baseball/player.rb:14", "Player", "Player#get_player_full_name"]'
+      simple_method_name: "#get_player_full_name"
+    details:
+      flog: complexity is 10.3
+      saikuro: complexity is 3.0
+      reek: found 3 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#find_or_create_batter
+      file_path: lib/fantasy_baseball/data_loader.rb:93
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '93'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:93", "DataLoader", "DataLoader#find_or_create_batter"]'
+      simple_method_name: "#find_or_create_batter"
+    details:
+      flog: complexity is 10.6
+      saikuro: complexity is 2.0
+      reek: found 2 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#roster_data_clean?
+      file_path: lib/fantasy_baseball/data_loader.rb:129
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '129'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:129", "DataLoader", "DataLoader#roster_data_clean?"]'
+      simple_method_name: "#roster_data_clean?"
+    details:
+      flog: complexity is 12.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#exec
+      file_path: lib/fantasy_baseball.rb:15
+      file_name: lib/fantasy_baseball.rb
+      line_number: '15'
+      hash_key: '["lib/fantasy_baseball.rb:15", "FantasyBaseball", "FantasyBaseball#exec"]'
+      simple_method_name: "#exec"
+    details:
+      flog: complexity is 12.9
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "FantasyBaseball", "FantasyBaseball#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 12.4
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#find_or_create_roster_entry
+      file_path: lib/fantasy_baseball/data_loader.rb:83
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '83'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:83", "DataLoader", "DataLoader#find_or_create_roster_entry"]'
+      simple_method_name: "#find_or_create_roster_entry"
+    details:
+      flog: complexity is 9.3
+      saikuro: complexity is 2.0
+      reek: found 2 code smells
+  - location:
+      class_name: Player
+      method_name: Player#initialize
+      file_path: lib/fantasy_baseball/player.rb:6
+      file_name: lib/fantasy_baseball/player.rb
+      line_number: '6'
+      hash_key: '["lib/fantasy_baseball/player.rb:6", "Player", "Player#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      flog: complexity is 7.5
+      saikuro: complexity is 2.0
+      reek: found 1 code smells
+  - location:
+      class_name: main
+      method_name: main#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", "main#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 7.7
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#log_failed_import
+      file_path: lib/fantasy_baseball/data_loader.rb:167
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '167'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:167", "DataLoader", "DataLoader#log_failed_import"]'
+      simple_method_name: "#log_failed_import"
+    details:
+      flog: complexity is 4.6
+      saikuro: complexity is 1.0
+      reek: found 2 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#valid_string?
+      file_path: lib/fantasy_baseball/data_loader.rb:153
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '153'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:153", "DataLoader", "DataLoader#valid_string?"]'
+      simple_method_name: "#valid_string?"
+    details:
+      flog: complexity is 4.1
+      saikuro: complexity is 1.0
+      reek: found 3 code smells
+  - location:
+      class_name: RosterEntry
+      method_name: RosterEntry#valid_string?
+      file_path: lib/fantasy_baseball/roster_entry.rb:21
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '21'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:21", "RosterEntry", "RosterEntry#valid_string?"]'
+      simple_method_name: "#valid_string?"
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+      reek: found 3 code smells
+  - location:
+      class_name: RosterEntry
+      method_name: RosterEntry#get_player_full_name
+      file_path: lib/fantasy_baseball/roster_entry.rb:25
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '25'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:25", "RosterEntry", "RosterEntry#get_player_full_name"]'
+      simple_method_name: "#get_player_full_name"
+    details:
+      flog: complexity is 3.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#triple_crown_header
+      file_path: lib/fantasy_baseball.rb:84
+      file_name: lib/fantasy_baseball.rb
+      line_number: '84'
+      hash_key: '["lib/fantasy_baseball.rb:84", "FantasyBaseball", "FantasyBaseball#triple_crown_header"]'
+      simple_method_name: "#triple_crown_header"
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#log_successful_import
+      file_path: lib/fantasy_baseball/data_loader.rb:161
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '161'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:161", "DataLoader", "DataLoader#log_successful_import"]'
+      simple_method_name: "#log_successful_import"
+    details:
+      flog: complexity is 3.3
+      saikuro: complexity is 1.0
+      reek: found 1 code smells
+  - location:
+      class_name: Statistics
+      method_name: Statistics#initialize
+      file_path: lib/fantasy_baseball/statistics.rb:9
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: '9'
+      hash_key: '["lib/fantasy_baseball/statistics.rb:9", "Statistics", "Statistics#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      flog: complexity is 2.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#load_batters
+      file_path: lib/fantasy_baseball.rb:36
+      file_name: lib/fantasy_baseball.rb
+      line_number: '36'
+      hash_key: '["lib/fantasy_baseball.rb:36", "FantasyBaseball", "FantasyBaseball#load_batters"]'
+      simple_method_name: "#load_batters"
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#load_player_roster
+      file_path: lib/fantasy_baseball.rb:30
+      file_name: lib/fantasy_baseball.rb
+      line_number: '30'
+      hash_key: '["lib/fantasy_baseball.rb:30", "FantasyBaseball", "FantasyBaseball#load_player_roster"]'
+      simple_method_name: "#load_player_roster"
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: RosterEntry
+      method_name: RosterEntry#valid_name?
+      file_path: lib/fantasy_baseball/roster_entry.rb:17
+      file_name: lib/fantasy_baseball/roster_entry.rb
+      line_number: '17'
+      hash_key: '["lib/fantasy_baseball/roster_entry.rb:17", "RosterEntry", "RosterEntry#valid_name?"]'
+      simple_method_name: "#valid_name?"
+    details:
+      flog: complexity is 2.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "DataLoader", "DataLoader#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 3.3
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#get_batting_average
+      file_path: lib/fantasy_baseball/data_loader.rb:104
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '104'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:104", "DataLoader", "DataLoader#get_batting_average"]'
+      simple_method_name: "#get_batting_average"
+    details:
+      flog: complexity is 1.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#clean_input_file
+      file_path: lib/fantasy_baseball/data_loader.rb:123
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '123'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:123", "DataLoader", "DataLoader#clean_input_file"]'
+      simple_method_name: "#clean_input_file"
+    details:
+      flog: complexity is 1.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#load_pitchers
+      file_path: lib/fantasy_baseball.rb:43
+      file_name: lib/fantasy_baseball.rb
+      line_number: '43'
+      hash_key: '["lib/fantasy_baseball.rb:43", "FantasyBaseball", "FantasyBaseball#load_pitchers"]'
+      simple_method_name: "#load_pitchers"
+    details:
+      flog: complexity is 2.5
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.triple_crown_winner
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.triple_crown_winner"]'
+      simple_method_name: "#self.triple_crown_winner"
+    details:
+      saikuro: complexity is 2.0
+      reek: found 2 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.slugging_percentage
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.slugging_percentage"]'
+      simple_method_name: "#self.slugging_percentage"
+    details:
+      saikuro: complexity is 2.0
+      reek: found 2 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.most_improved_batting_average
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.most_improved_batting_average"]'
+      simple_method_name: "#self.most_improved_batting_average"
+    details:
+      saikuro: complexity is 2.0
+      reek: found 2 code smells
+  - location:
+      class_name: DataLoader
+      method_name: DataLoader#valid_integer?
+      file_path: lib/fantasy_baseball/data_loader.rb:157
+      file_name: lib/fantasy_baseball/data_loader.rb
+      line_number: '157'
+      hash_key: '["lib/fantasy_baseball/data_loader.rb:157", "DataLoader", "DataLoader#valid_integer?"]'
+      simple_method_name: "#valid_integer?"
+    details:
+      flog: complexity is 1.1
+      saikuro: complexity is 1.0
+      reek: found 1 code smells
+  - location:
+      class_name: Player
+      method_name: Player#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Player", "Player#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.welcome
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.welcome"]'
+      simple_method_name: "#self.welcome"
+    details:
+      saikuro: complexity is 1.0
+      reek: found 3 code smells
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.triple_crown_header
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.triple_crown_header"]'
+      simple_method_name: "#self.triple_crown_header"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: RosterEntry
+      method_name: RosterEntry#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "RosterEntry", "RosterEntry#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Statistics
+      method_name: Statistics#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Statistics", "Statistics#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Statistics
+      method_name: Statistics#self.initialize_roster_data
+      file_path: lib/fantasy_baseball/statistics.rb
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/statistics.rb", "Statistics", "Statistics#self.initialize_roster_data"]'
+      simple_method_name: "#self.initialize_roster_data"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Statistics
+      method_name: Statistics#self.initialize_batting_data
+      file_path: lib/fantasy_baseball/statistics.rb
+      file_name: lib/fantasy_baseball/statistics.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball/statistics.rb", "Statistics", "Statistics#self.initialize_batting_data"]'
+      simple_method_name: "#self.initialize_batting_data"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.load_pitchers
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.load_pitchers"]'
+      simple_method_name: "#self.load_pitchers"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.load_batters
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.load_batters"]'
+      simple_method_name: "#self.load_batters"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.load_player_roster
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.load_player_roster"]'
+      simple_method_name: "#self.load_player_roster"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FantasyBaseball
+      method_name: FantasyBaseball#self.exec
+      file_path: lib/fantasy_baseball.rb
+      file_name: lib/fantasy_baseball.rb
+      line_number: 
+      hash_key: '["lib/fantasy_baseball.rb", "FantasyBaseball", "FantasyBaseball#self.exec"]'
+      simple_method_name: "#self.exec"
+    details:
+      saikuro: complexity is 1.0
+      reek: found 1 code smells
