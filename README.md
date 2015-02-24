@@ -62,7 +62,7 @@
 >
 > By default, the csv input data files are located in the /data/ directory of the project.  However, this is configurable.  You will configure the file location in the following configuration file:
 >
-     $ ../config/configuration.rb
+     $ config/configuration.rb
 >
 
 > For example,
@@ -83,7 +83,7 @@
 > 
 > As mentioned above there are several configuration settings available inside the following file:
 >
-     $ ../config/configuration.rb
+     $ config/configuration.rb
 
 >
 >
